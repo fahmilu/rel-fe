@@ -1,0 +1,11 @@
+.btn {
+    @apply text-white border px-6 py-2 rounded-[8px] text-base tracking-[.32px] font-medium transition-all duration-300 h-[50px] flex items-center justify-center;
+
+    &__secondary {
+        @apply bg-transparent border-white hover:bg-white hover:text-black transition-all duration-300;
+    }
+
+    &__primary {
+        @apply bg-orange text-white border-orange hover:bg-white hover:text-orange;
+    }
+}

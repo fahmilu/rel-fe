@@ -1,0 +1,52 @@
+.footer {
+    @apply bg-[#231F20];
+
+    .container {
+        @apply flex flex-col md:gap-6 gap-12 border-t border-[#454545] pt-[40px] pb-[56px] md:py-20;
+    }
+
+    &__top {
+        @apply flex justify-between items-start md:flex-row flex-col gap-y-10;
+    }
+    
+    &__nav {
+        @apply flex gap-5 2xl:gap-10 items-center flex-wrap;
+
+        &-item {
+            @apply text-white text-sm/[150%] 2xl:text-base/[24px] tracking-[.32px] font-medium hover:text-[#F38D1E] transition-colors duration-200;
+        }
+    }
+
+    &__info {
+        @apply flex items-center gap-2;
+
+        &-text {
+            @apply text-white text-sm/[150%] 2xl:text-base/[24px] tracking-[.32px] font-medium;
+        }
+    }
+    
+    &__logo {
+        @apply relative w-[163px] h-[75px] lg:w-[163px] lg:h-[75px] mb-[2px];
+    }
+
+    &__bottom {
+        @apply flex justify-between items-center;
+
+        &-left {
+            @apply flex items-center gap-3;
+        }
+
+        &-right {
+            @apply flex items-center gap-6 flex-wrap;
+        }
+    }
+    
+    &__link,
+    &__copyright {
+        @apply text-white text-sm/[150%] 2xl:text-base/[24px] tracking-[.32px] font-medium;
+    }
+
+    &__link {
+        @apply hover:text-[#F38D1E] underline transition-colors duration-200;
+    }
+}

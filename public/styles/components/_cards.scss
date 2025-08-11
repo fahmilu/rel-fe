@@ -1,0 +1,124 @@
+.card {
+    &__product {
+        @apply flex flex-col overflow-hidden rounded-lg bg-white shadow-md;
+
+        &__image-area {
+            @apply relative w-full py-5 h-[300px] px-[70px];
+
+            &__image {
+                @apply relative w-full h-full;
+            }
+        }
+
+        &__content {
+            @apply flex flex-col gap-8 p-6 transition-all duration-300;
+
+            &__top {
+                @apply flex flex-col gap-4;
+                h4 {
+                    @apply transition-all duration-300;
+                }
+                &__info {
+                    @apply flex flex-col;
+
+                    span {
+                        @apply transition-all duration-300;
+                        &:first-child {
+                            @apply text-[#BFBFBF] text-sm/[21px] uppercase font-semibold tracking-[1.12px];
+                        }
+
+                        &:last-child {
+                            @apply text-[#231F20] text-base;
+                        }
+                    }
+                }
+            }
+
+            &__read-more {
+                @apply flex flex-row gap-2 items-center justify-start;
+
+                span {
+                    @apply text-[#F38D1E] text-base;
+                }
+
+                svg {
+                    @apply opacity-0 transition-all duration-300;
+                }
+            }
+        }
+
+        &:hover {
+            .card__product__content {
+                background: var(--Soft-orange, #FFFAF4);
+            }
+
+            .card__product__content__read-more {
+                svg {
+                    @apply opacity-100;
+                }
+            }
+            h4 {
+                @apply text-[#F38D1E];
+            }
+            .card__product__content__top__info {
+                span {
+                    @apply text-[#F38D1E];
+                }
+            }
+        }
+    }
+
+    &__project {
+        @apply flex flex-col overflow-hidden rounded-lg bg-white shadow-md;
+
+        &__image {
+            @apply relative w-full h-[220px];
+        }
+
+        &__content {
+            @apply flex flex-col flex-1 gap-8 p-6 transition-all justify-between duration-300;
+
+            &__top {
+                @apply flex flex-col gap-2;
+                h4 {
+                    @apply transition-all duration-300 line-clamp-3;
+                }
+                &__location {
+                    @apply text-[#868686] transition-all duration-300;
+                }
+                &__description {
+                    @apply line-clamp-3 transition-all duration-300;
+                }
+            }
+
+            &__read-more {
+                @apply flex flex-row gap-2 items-center justify-start;
+
+                span {
+                    @apply text-[#F38D1E] text-base;
+                }
+
+                svg {
+                    @apply opacity-0 transition-all duration-300;
+                }
+            }
+        }
+
+        &:hover {
+            .card__project__content {
+                background: var(--Soft-orange, #FFFAF4);
+            }
+
+            .card__project__content__read-more {
+                svg {
+                    @apply opacity-100;
+                }
+            }
+            .card__project__content__top__location,
+            .card__project__content__top__description,
+            h4 {
+                @apply text-[#F38D1E];
+            }
+        }
+    }
+}

@@ -1,0 +1,88 @@
+.banner {
+    &__home {
+        &__container {
+            @apply relative w-full overflow-hidden;
+        }
+    
+        &__slide {
+            @apply max-[1440px]:h-[810px] h-[80vh];
+        }
+    
+        &__background {
+            @apply w-full h-full relative;
+        }
+    
+        &__overlay {
+            @apply absolute top-0 left-0 w-full h-full bg-black/15;
+            mix-blend-mode: darken;
+        }
+        
+        .container {
+            @apply h-full flex items-start justify-center flex-col relative;
+        }
+        
+        &__content {
+            @apply text-white max-w-[800px] flex flex-col gap-6;
+
+            h1, h4 {
+                text-shadow: 0 0 5.1px rgba(0, 0, 0, 0.25);
+            }
+        }
+    
+    
+        &__buttons {
+            @apply flex gap-4 justify-start flex-wrap pt-2;
+
+            .btn {
+                @apply h-[50px] flex items-center justify-center;
+
+
+                &__secondary {
+                    @apply text-white border-white bg-white/25 hover:bg-orange hover:text-white hover:border-orange transition-all duration-300;
+                }
+            }
+        }
+    
+    
+        &__dots {
+            @apply bottom-10 flex items-center justify-center gap-2 #{!important};
+
+            li {
+                @apply w-fit h-fit;
+            }
+        }
+    
+        &__dot {
+            @apply w-3 h-3 rounded-full bg-white/50 transition-all duration-300 ease-in-out;
+    
+        }
+
+        .slick-active {
+            .banner__home__dot {
+                @apply bg-white;
+            }
+        }
+    }
+
+    &__page {
+        @apply relative w-full md:h-[400px] h-[460px] overflow-hidden;
+
+        &__overlay {
+            @apply absolute top-0 left-0 w-full h-full bg-black/50;
+            mix-blend-mode: darken;
+        }
+
+       
+
+        .container {
+            @apply h-full flex items-start justify-center md:justify-end md:py-[100px] py-10 relative text-white;
+            .page__banner__content {
+                @apply flex flex-col gap-4 h-full justify-center md:justify-end w-full;
+            }
+            h4 {
+                @apply max-w-[1000px];
+            }
+        }
+    }
+
+}

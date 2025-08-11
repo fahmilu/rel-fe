@@ -1,0 +1,10 @@
+{
+    "title": "Contact",
+    "description": "Ready to rent or need advice? Let’s talk.",
+    "image": "/imgs/dummies/banner/project.jpg",
+    "contents": [
+        {
+            "type": "contact-index"
+        }
+    ]
+}

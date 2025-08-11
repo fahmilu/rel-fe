@@ -1,0 +1,10 @@
+{
+    "title": "Products",
+    "description": "Explore our full range of high-performance pump rentals, available with rapid deployment and technical support.",
+    "image": "/imgs/dummies/banner/products.png",
+    "contents": [
+        {
+            "type": "product-index"
+        }
+    ]
+}

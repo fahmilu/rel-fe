@@ -1,0 +1,10 @@
+{
+    "title": "Projects",
+    "description": "See how our pumps perform in real-world conditions across Indonesia.",
+    "image": "/imgs/dummies/banner/project.jpg",
+    "contents": [
+        {
+            "type": "project-index"
+        }
+    ]
+}

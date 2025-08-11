@@ -1,0 +1,187 @@
+{
+    "industries": [
+        {
+            "id": 1,
+            "name": "industry.list.mining.title",
+            "subtitle": "industry.list.mining.subtitle",
+            "benefits": [
+                "Suitable for wastewater, slurry, and dirty water applications",
+                "Handles solids up to 65 mm",
+                "Ideal for construction, mining, agriculture, and municipal use",
+                "Operates in fluid temperatures up to 60°C",
+                "Supports both fixed and portable setups",
+                "Reliable in continuous or intermittent operation"
+            ],
+            "media": [
+                {
+                    "type": "image",
+                    "url": "/imgs/dummies/industry/mining.png"
+                }
+            ],
+            "suggestedProducts": [
+                {
+                    "id": 1,
+                    "name": "HY85/180 1",
+                    "image": "/imgs/dummies/industry/pump.png"
+                },
+                {
+                    "id": 2,
+                    "name": "HY85/180 2",
+                    "image": "/imgs/dummies/industry/pump.png"
+                },
+                {
+                    "id": 3,
+                    "name": "HY85/180 3",
+                    "image": "/imgs/dummies/industry/pump.png"
+                },
+                {
+                    "id": 4,
+                    "name": "HY85/180 4",
+                    "image": "/imgs/dummies/industry/pump.png"
+                },
+                {
+                    "id": 5,
+                    "name": "HY85/180 5",
+                    "image": "/imgs/dummies/industry/pump.png"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "name": "industry.list.construction.title",
+            "subtitle": "industry.list.construction.subtitle",
+            "benefits": [
+                "Ideal for foundation dewatering and site drainage",
+                "Handles solids up to 65 mm",
+                "Ideal for construction, mining, agriculture, and municipal use",
+                "Operates in fluid temperatures up to 60°C",
+                "Supports both fixed and portable setups",
+                "Reliable in continuous or intermittent operation"
+            ],
+            "media": [
+                {
+                    "type": "video",
+                    "url": "/imgs/dummies/vid.mp4"
+                }
+            ],
+            "suggestedProducts": [
+                {
+                    "id": 1,
+                    "name": "HY85/180 1",
+                    "image": "/imgs/dummies/industry/pump.png"
+                },
+                {
+                    "id": 2,
+                    "name": "HY85/180 2",
+                    "image": "/imgs/dummies/industry/pump.png"
+                },
+                {
+                    "id": 3,
+                    "name": "HY85/180 3",
+                    "image": "/imgs/dummies/industry/pump.png"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "name": "industry.list.tunneling.title",
+            "subtitle": "industry.list.tunneling.subtitle",
+            "benefits": [
+                "Ideal for slurry handling in confined environments",
+                "Handles solids up to 65 mm",
+                "Ideal for construction, mining, agriculture, and municipal use",
+                "Operates in fluid temperatures up to 60°C"
+            ],
+            "media": [
+                {
+                    "type": "image",
+                    "url": "/imgs/dummies/industry/mining.png"
+                }
+            ],
+            "suggestedProducts": [
+                {
+                    "id": 1,
+                    "name": "HY85/180 1",
+                    "image": "/imgs/dummies/industry/pump.png"
+                },
+                {
+                    "id": 2,
+                    "name": "HY85/180 2",
+                    "image": "/imgs/dummies/industry/pump.png"
+                },
+                {
+                    "id": 3,
+                    "name": "HY85/180 3",
+                    "image": "/imgs/dummies/industry/pump.png"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "name": "industry.list.oil.title",
+            "subtitle": "industry.list.oil.subtitle",
+            "benefits": [
+                "Ideal for slurry handling in confined environments",
+                "Handles solids up to 65 mm",
+                "Ideal for construction, mining, agriculture, and municipal use",
+                "Operates in fluid temperatures up to 60°C"
+            ],
+            "media": [
+                {
+                    "type": "image",
+                    "url": "/imgs/dummies/industry/mining.png"
+                }
+            ],
+            "suggestedProducts": [
+                {
+                    "id": 1,
+                    "name": "HY85/180 1",
+                    "image": "/imgs/dummies/industry/pump.png"
+                },
+                {
+                    "id": 2,
+                    "name": "HY85/180 2",
+                    "image": "/imgs/dummies/industry/pump.png"
+                },
+                {
+                    "id": 3,
+                    "name": "HY85/180 3",
+                    "image": "/imgs/dummies/industry/pump.png"
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "name": "industry.list.disaster.title",
+            "subtitle": "industry.list.disaster.subtitle",
+            "benefits": [
+                "Ideal for emergency flood control",
+                "Handles solids up to 65 mm",
+                "Ideal for construction, mining, agriculture, and municipal use"
+            ],
+            "media": [
+                {
+                    "type": "image",
+                    "url": "/imgs/dummies/industry/mining.png"
+                }
+            ],
+            "suggestedProducts": [
+                {
+                    "id": 1,
+                    "name": "HY85/180 1",
+                    "image": "/imgs/dummies/industry/pump.png"
+                },
+                {
+                    "id": 2,
+                    "name": "HY85/180 2",
+                    "image": "/imgs/dummies/industry/pump.png"
+                },
+                {
+                    "id": 3,
+                    "name": "HY85/180 3",
+                    "image": "/imgs/dummies/industry/pump.png"
+                }
+            ]
+        }
+    ]
+}

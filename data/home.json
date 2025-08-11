@@ -1,0 +1,131 @@
+{
+    "contents" : [
+        {
+            "type": "home-banner",
+            "data": [
+                {
+                    "title": "Heavy-Duty Pump Rentals for Every Operation",
+                    "description": "Reliable, efficient, and ready for your project",
+                    "image": "/imgs/dummies/banner.png",
+                    "links": [
+                        {
+                            "label": "home.button.product",
+                            "url": "#",
+                            "class": "primary"
+                        },
+                        {
+                            "label": "home.button.talk",
+                            "url": "#",
+                            "class": "secondary"
+                        }
+                    ]
+                },
+                    {
+                        "title": "Water Pump Rentals for Industrial and Commercial Projects",
+                        "description": "Reliable, efficient, and ready for your project",
+                        "image": "/imgs/dummies/banner-2.png",
+                        "links": [
+                            {
+                                "label": "home.button.product",
+                                "url": "#",
+                                "class": "primary"
+                            },
+                            {
+                                "label": "home.button.talk",
+                                "url": "#",
+                                "class": "secondary"
+                            }
+                        ]
+                    }
+            ]
+        },
+        {
+            "type": "home-about",
+            "data": {
+                "title": "Comprehensive Mine Water and Slurry Solutions: Partnering for Success with PT Resource Equipment Indonesia",
+                "description": "<p>PT Resource Equipment Indonesia (PT REI or Company) is an expert supplier for mine water and slurry management solutions. With decades of industry experience, the Company is dedicated to understanding our customers unique business needs.</p><p>We take it to the next level by offering support, service and comprehensive site training and education site operations - ensuring that efficiencies are maximised every step of the way. If you have a problem, we’ll partner with you to find a way to solve it. That’s our philosophy, plain and simple.</p><p>Our services extend to equipment hire and retail purchase, serving the Mining, Oil & Gas, Construction industries. We also can provide bespoke services as the customer requires.",
+                "services": [
+                    {
+                        "title": "home.about.ep1",
+                        "image": "/imgs/dummies/service-1.png"
+                    },
+                    {
+                        "title": "home.about.ep2",
+                        "image": "/imgs/dummies/service-2.png"
+                    },
+                    {
+                        "title": "home.about.ep3",
+                        "image": "/imgs/dummies/service-3.png"
+                    }
+                ]
+            }
+        },
+        {
+            "type": "home-products",
+            "data": {
+                "label": "home.product.label",
+                "title": "home.product.title",
+                "products": [
+                    {
+                        "title": "HY85/180 Slurry Pump",
+                        "image": "/imgs/dummies/product/1.jpg"
+                    },
+                    {
+                        "title": "420EX Dewatering Pump",
+                        "image": "/imgs/dummies/product/2.jpg"
+                    },
+                    {
+                        "title": "Electric Submersible",
+                        "image": "/imgs/dummies/product/3.jpg"
+                    }
+                ]
+            }
+        },
+        {
+            "type": "home-industries",
+            "data": {
+                "label": "home.service.label",
+                "title": "home.service.title",
+                "industries": [
+                    {
+                        "title": "Mining",
+                        "image": "/imgs/dummies/industries/1.png"
+                    },
+                    {
+                        "title": "Construction",
+                        "image": "/imgs/dummies/industries/2.png"
+                    },
+                    {
+                        "title": "Tunneling",
+                        "image": "/imgs/dummies/industries/3.png"
+                    },
+                    {
+                        "title": "Infrastructure",
+                        "image": "/imgs/dummies/industries/4.png"
+                    },
+                    {
+                        "title": "Oil & Gas",
+                        "image": "/imgs/dummies/industries/5.png"
+                    }
+                ]
+            }
+        },
+        {
+            "type": "home-projects",
+            "data": {
+                "label": "home.project.label"
+            }
+        },
+        {
+            "type": "home-quotes",
+            "data": {
+                "title": "home.quote.title",
+                "subtitle": "home.quote.subtitle",
+                "button": {
+                    "label": "home.button.quote",
+                    "link": "#"
+                }
+            }
+        }
+    ]
+}

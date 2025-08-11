@@ -1,0 +1,10 @@
+{
+    "title": "Industries & Applications",
+    "description": "Custom pumping solutions for every sector",
+    "image": "/imgs/dummies/banner/industry.jpg",
+    "contents": [
+        {
+            "type": "industry-index"
+        }
+    ]
+}

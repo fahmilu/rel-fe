@@ -1,0 +1,94 @@
+{
+    "data": [
+        {
+            "title": "HY85/180 Slurry Pump",
+            "flowRate": "Up to 180 m³/h (792 GPM)",
+            "power":"15 kW (20 HP)",
+            "solidsHandling":"Up to 65 mm (2.6 inches)",
+            "image": "/imgs/dummies/product/1.jpg",
+            "type": "Hydraulic",
+            "application": "Slurry",
+            "sizeRange": "3\" to 12\""
+        },
+        {
+            "title": "420EX Diesel",
+            "flowRate": "Up to 180 m³/h (792 GPM)",
+            "power":"15 kW (20 HP)",
+            "solidsHandling":"Up to 65 mm (2.6 inches)",
+            "image": "/imgs/dummies/product/2.jpg",
+            "type": "Diesel",
+            "application": "Dewatering",
+            "sizeRange": "420 mm (16.5 in)"
+        },
+        {
+            "title": "Electric Submersible",
+            "flowRate": "Up to 180 m³/h (792 GPM)",
+            "power":"15 kW (20 HP)",
+            "solidsHandling":"Up to 65 mm (2.6 inches)",
+            "image": "/imgs/dummies/product/3.jpg",
+            "type": "Electric",
+            "application": "Submersible",
+            "sizeRange": "3\" to 12\""
+        },     
+        {
+            "title": "HY85/180 Slurry Pump",
+            "flowRate": "Up to 180 m³/h (792 GPM)",
+            "power":"15 kW (20 HP)",
+            "solidsHandling":"Up to 65 mm (2.6 inches)",
+            "image": "/imgs/dummies/product/1.jpg",
+            "type": "Hydraulic",
+            "application": "Slurry",
+            "sizeRange": "3\" to 12\""
+        },
+        {
+            "title": "420EX Diesel",
+            "flowRate": "Up to 180 m³/h (792 GPM)",
+            "power":"15 kW (20 HP)",
+            "solidsHandling":"Up to 65 mm (2.6 inches)",
+            "image": "/imgs/dummies/product/2.jpg",
+            "type": "Diesel",
+            "application": "Dewatering",
+            "sizeRange": "420 mm (16.5 in)"
+        },
+        {
+            "title": "Electric Submersible",
+            "flowRate": "Up to 180 m³/h (792 GPM)",
+            "power":"15 kW (20 HP)",
+            "solidsHandling":"Up to 65 mm (2.6 inches)",
+            "image": "/imgs/dummies/product/3.jpg",
+            "type": "Electric",
+            "application": "Submersible",
+            "sizeRange": "3\" to 12\""
+        },
+        {
+            "title": "HY85/180 Slurry Pump",
+            "flowRate": "Up to 180 m³/h (792 GPM)",
+            "power":"15 kW (20 HP)",
+            "solidsHandling":"Up to 65 mm (2.6 inches)",
+            "image": "/imgs/dummies/product/1.jpg",
+            "type": "Hydraulic",
+            "application": "Slurry",
+            "sizeRange": "3\" to 12\""
+        },
+        {
+            "title": "420EX Diesel",
+            "flowRate": "Up to 180 m³/h (792 GPM)",
+            "power":"15 kW (20 HP)",
+            "solidsHandling":"Up to 65 mm (2.6 inches)",
+            "image": "/imgs/dummies/product/2.jpg",
+            "type": "Diesel",
+            "application": "Dewatering",
+            "sizeRange": "420 mm (16.5 in)"
+        },
+        {
+            "title": "Electric Submersible",
+            "flowRate": "Up to 180 m³/h (792 GPM)",
+            "power":"15 kW (20 HP)",
+            "solidsHandling":"Up to 65 mm (2.6 inches)",
+            "image": "/imgs/dummies/product/3.jpg",
+            "type": "Electric",
+            "application": "Submersible",
+            "sizeRange": "3\" to 12\""
+        }
+    ]
+}

@@ -1,0 +1,88 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@import "partials/textstyles";
+
+body {
+  @apply font-global text-[#231F20] sm:text-lg text-base antialiased;
+}
+
+main {
+  // @apply overflow-x-hidden overflow-y-clip;
+}
+.container {
+  @apply max-w-[1440px] mx-auto 2xl:px-20 md:px-10 px-5;
+}
+
+label {
+  &.title__label {
+    @apply text-[#F38D1E] text-[14px] font-semibold leading-[21px] tracking-[1.12px] uppercase;
+  }
+}
+
+
+.datalist {
+  @apply flex flex-col gap-10 pt-10 pb-20;
+
+  .filter__area {
+    @apply flex flex-row justify-between items-center;
+
+    .filter__list {
+      @apply flex md:flex-row flex-col gap-6;
+
+      .filter__item {
+        @apply flex flex-col gap-1 w-[200px];
+
+        .filter__title {
+          @apply text-[#868686] text-base;
+        }
+
+        .filter__dropdown {
+          @apply relative;
+          .filter__button {
+            @apply flex flex-row gap-2 justify-between items-center p-2 border border-[#E1E1E1] rounded-lg cursor-pointer;
+
+            span {
+              @apply text-[#231F20] text-lg capitalize whitespace-nowrap overflow-hidden text-ellipsis;
+            }
+          }
+
+          .filter__dropdown__list {
+            @apply flex flex-col absolute top-full mt-2 left-0 min-w-full bg-white border border-orange rounded-lg z-10 pointer-events-none opacity-0 -translate-y-5 transition-all duration-300;
+            box-shadow: 0 4px 5.5px 0 rgba(0, 0, 0, 0.15);
+
+            &.active {
+              @apply pointer-events-auto opacity-100 translate-y-0;
+            }
+
+            &__item {
+              @apply relative py-2 px-2.5 flex flex-row gap-2 items-center justify-between cursor-pointer text-lg hover:text-orange capitalize whitespace-nowrap;
+
+              &.active {
+                @apply text-orange;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@import "partials/header";
+@import "partials/footer";
+
+
+@import "components/button";
+@import "components/cards";
+@import "components/banner";
+@import "components/pagination";
+
+@import "components/home";
+
+@import "pages/project";
+@import "pages/product";
+@import "pages/industry";
+@import "pages/contact";
