@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const ProductCard = ({ data }) => {
     return (
-        <Link href={`/product/detail-product`} className="card__product">
+    <Link href={`/products/detail-product`} className="card__product">
             <div className="card__product__image-area">
                 <div className="card__product__image-area__image">
                     <Image src={data.image} alt={data.title} fill className="object-cover" />

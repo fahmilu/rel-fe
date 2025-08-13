@@ -7,11 +7,24 @@ import { usePathname } from "next/navigation";
 const Desktop = ({ navItems }) => {
     const { t } = useTranslation();
     const pathname = usePathname();
-    
+
+    // Helper to check if current path matches or starts with nav item href
+    const isNavItemActive = (href) => {
+        // Remove trailing slash for comparison
+        const normalize = (str) => str.replace(/\/+$/, '');
+        // If href is root, only match exact root
+        if (href === "/") return pathname === "/";
+        // Otherwise, match if pathname starts with href + "/" or is exactly href
+        return normalize(pathname).startsWith(normalize(href)) && (
+            normalize(pathname) === normalize(href) ||
+            normalize(pathname).startsWith(normalize(href) + "/")
+        );
+    };
+
     return (
         <nav className="header__nav-desktop">
             {navItems.map((item) => {
-                const isActive = pathname === item.href;
+                const isActive = isNavItemActive(item.href);
                 return (
                     <Link 
                         key={item.href} 

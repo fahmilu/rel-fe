@@ -27,13 +27,13 @@ label {
   @apply flex flex-col gap-10 pt-10 pb-20;
 
   .filter__area {
-    @apply flex flex-row justify-between items-center;
+    @apply flex flex-col gap-y-10 md:flex-row md:justify-between md:items-center;
 
     .filter__list {
       @apply flex md:flex-row flex-col gap-6;
 
       .filter__item {
-        @apply flex flex-col gap-1 w-[200px];
+        @apply flex flex-col gap-1 w-full md:w-[200px];
 
         .filter__title {
           @apply text-[#868686] text-base;

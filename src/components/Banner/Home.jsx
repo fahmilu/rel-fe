@@ -66,7 +66,7 @@ const HomeBanner = ({ data }) => {
                                                 </Link>
                                             ))}
                                         </div>
-                                        <div className="banner__home__scroll mt-10">
+                                        <div className="banner__home__scroll mt-10 hidden md:block">
                                             <svg xmlns="http://www.w3.org/2000/svg" width={48} height={48} viewBox="0 0 48 48" fill="none">
                                                 <path fillRule="evenodd" clipRule="evenodd" d="M24 4C30.6274 4 36 9.37258 36 16V32C36 38.6274 30.6274 44 24 44C17.3726 44 12 38.6274 12 32V16C12 9.37258 17.3726 4 24 4ZM24 5.6C18.0093 5.6 13.6 11.5817 13.6 16V32C13.6 36.4183 17.2 42.4 24 42.4C30.8 42.4 34.4 36.4183 34.4 32V16C34.4 11.5817 29.9907 5.6 24 5.6ZM24 14C25.1046 14 26 14.8954 26 16V20C26 21.1046 25.1046 22 24 22C22.8954 22 22 21.1046 22 20V16C22 14.8954 22.8954 14 24 14Z" fill="white" />
                                             </svg>

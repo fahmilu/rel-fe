@@ -3,15 +3,19 @@
         @apply flex flex-col overflow-hidden rounded-lg bg-white shadow-md;
 
         &__image-area {
-            @apply relative w-full py-5 h-[300px] px-[70px];
+            @apply relative w-full py-5 h-[200px] md:h-[300px] px-5 md:px-[70px];
 
             &__image {
                 @apply relative w-full h-full;
+
+                img {
+                    @apply w-full h-full object-contain;
+                }
             }
         }
 
         &__content {
-            @apply flex flex-col gap-8 p-6 transition-all duration-300;
+            @apply flex flex-col gap-4 md:gap-8 py-4 px-2 md:p-6 transition-all duration-300;
 
             &__top {
                 @apply flex flex-col gap-4;
@@ -24,18 +28,18 @@
                     span {
                         @apply transition-all duration-300;
                         &:first-child {
-                            @apply text-[#BFBFBF] text-sm/[21px] uppercase font-semibold tracking-[1.12px];
+                            @apply text-[#BFBFBF] text-[10px]/[18px] md:text-sm/[21px] uppercase font-semibold md:tracking-[1.12px];
                         }
 
                         &:last-child {
-                            @apply text-[#231F20] text-base;
+                            @apply text-[#231F20] text-xs/[120%] md:text-base;
                         }
                     }
                 }
             }
 
             &__read-more {
-                @apply flex flex-row gap-2 items-center justify-start;
+                @apply hidden md:flex flex-row gap-2 items-center justify-start;
 
                 span {
                     @apply text-[#F38D1E] text-base;

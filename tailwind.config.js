@@ -14,8 +14,8 @@ module.exports = {
     },
     extend: {
       fontSize: {
-        'heading-1': ["52", "72px"],
-        'heading-2': ["42", "64px"],
+        'heading-1': ["52px", "72px"],
+        'heading-2': ["42px", "64px"],
         'heading-3': ["32px", "48px"],
         'heading-4': ["24px", "150%"],
         'heading-1-mobile': ["40px", "52px"],

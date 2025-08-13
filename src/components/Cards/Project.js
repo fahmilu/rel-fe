@@ -1,8 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
+import { useTranslation } from "react-i18next";
 const ProjectCard = ({ data }) => {
+    const { i18n } = useTranslation();
     return (
-        <Link href={`/project/project-detail`} className="card__project">
+        <Link href={`/projects/project-detail`} className="card__project">
             <div className="card__project__image">
                 <Image src={data.image} alt={data.title} fill className="object-cover" />
             </div>
@@ -13,7 +15,7 @@ const ProjectCard = ({ data }) => {
                     <div className="card__project__content__top__description">{data.description}</div>
                 </div>
                 <div className="card__project__content__read-more">
-                    <span>View Case Study</span>
+                    <span>{i18n.language === 'id' ? 'Lihat Studi Kasus' : 'View Case Study'}</span>
                     <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} viewBox="0 0 24 24" fill="none">
                         <mask id="mask0_2036_732" style={{maskType: 'alpha'}} maskUnits="userSpaceOnUse" x={0} y={0} width={24} height={24}>
                             <rect width={24} height={24} fill="#D9D9D9" />

@@ -1,0 +1,37 @@
+{
+    "title": "Pontoon Mount Self Dewatering Pump Rental",
+    "location": "PТ. РАМA PERSADA NUSANTARA - SITE KPCS, EAST KALIMANTAN",
+    "info": [
+        {
+            "title": "timeline",
+            "value": "May 2022"
+        },
+        {
+            "title": "Problem statement",
+            "value": "<p>A mining operation in East Kalimantan was experiencing persistent flooding in a remote excavation pit due to heavy seasonal rainfall and a rising groundwater table. Traditional dewatering methods were proving inefficient and required constant manual intervention.</p>"
+        },
+        {
+            "title": "Site Condition",
+            "value": "Remote open-pit mining site with limited access, high sediment content in water, and fluctuating water levels. No stable ground surface for fixed pump installation."
+        },
+        {
+            "title": "Pump Used",
+            "value": "<ul><li>Pump: 1000 GPM (3785 L/min)</li><li>Pump: 1000 GPM (3785 L/min)</li><li>Pump: 1000 GPM (3785 L/min)</li></ul>"
+        },
+        {
+            "title": "Outcome",
+            "value": "Effective and autonomous dewatering was achieved, maintaining pit access and operational uptime. The pontoon system ensured uninterrupted performance regardless of water level changes."
+        }
+    ],
+    "feedback": [
+        {
+            "client": "John Martin - Manager",
+            "value": "The pontoon-mounted pump performed beyond expectations. Minimal supervision was required, and the system handled high solids with ease. It significantly reduced our downtime during critical operations."
+        }
+    ],
+    "images": [     
+        "/imgs/dummies/projects/detail/1.png",
+        "/imgs/dummies/projects/detail/2.png",
+        "/imgs/dummies/projects/detail/3.png"
+    ]
+}

@@ -1,0 +1,40 @@
+{
+    "title": "HY85/180",
+    "info": [
+        {
+            "title": "type",
+            "value": "Hydraulic"
+        },
+        {
+            "title": "application",
+            "value": "Slurry"
+        },
+        {
+            "title": "Size Range",
+            "value": "3\" to 12\""
+        },
+        {
+            "title": "Max Pressure",
+            "value": "10000 PSI"
+        },
+        {
+            "title": "Flow Rate",
+            "value": "Up to 180 m³/h (792 GPM)"
+        },
+        {
+            "title": "Power",
+            "value": "15 kW (20 HP)"
+        },
+        {
+            "title": "Solids Handling",
+            "value": "Up to 65 mm (2.6 inches)"
+        }
+    ],
+    "guide": "<p>The HY85/180 industrial pump is suitable for a wide range of demanding applications, including wastewater transfer, construction dewatering, slurry handling, and agricultural irrigation. Its robust design handles solids up to 65 mm and operates reliably in fluid temperatures up to 60°C. Ideal for both fixed and portable installations, the HY85/180 performs well in continuous or intermittent duty, making it a versatile choice for harsh environments.</p><ul><li>High-performance slurry pump</li><li>Robust design for continuous or intermittent duty</li><li>Handles solids up to 65 mm</li><li>Operates reliably in fluid temperatures up to 60°C</li><li>Ideal for both fixed and portable installations</li></ul>",
+    "datasheet": "https://www.google.com",
+    "images": [     
+        "/imgs/dummies/product/1.jpg",
+        "/imgs/dummies/product/2.jpg",
+        "/imgs/dummies/product/3.jpg"
+    ]
+}

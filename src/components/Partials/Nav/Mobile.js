@@ -2,12 +2,11 @@
 
 import { useTranslation } from "react-i18next";
 import Link from "next/link";
-import { useState } from "react";
 import LangSwitcher from "../LangSwitcher";
+import { usePathname } from "next/navigation";
 
-const Mobile = ({ navItems }) => {
+const Mobile = ({ navItems, isMenuOpen, setIsMenuOpen }) => {
     const { t } = useTranslation();
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
@@ -15,6 +14,21 @@ const Mobile = ({ navItems }) => {
 
     const closeMenu = () => {
         setIsMenuOpen(false);
+    };
+
+    const pathname = usePathname();
+
+    // Helper to check if current path matches or starts with nav item href
+    const isNavItemActive = (href) => {
+        // Remove trailing slash for comparison
+        const normalize = (str) => str.replace(/\/+$/, '');
+        // If href is root, only match exact root
+        if (href === "/") return pathname === "/";
+        // Otherwise, match if pathname starts with href + "/" or is exactly href
+        return normalize(pathname).startsWith(normalize(href)) && (
+            normalize(pathname) === normalize(href) ||
+            normalize(pathname).startsWith(normalize(href) + "/")
+        );
     };
 
     return (
@@ -31,16 +45,18 @@ const Mobile = ({ navItems }) => {
             
             <nav className={`header__nav-mobile ${isMenuOpen ? 'open' : ''}`}>
                 <div className="mobile-menu-content">
-                    {navItems.map((item) => (
+                    {navItems.map((item) => {
+                        const isActive = isNavItemActive(item.href);
+                        return (
                         <Link 
                             key={item.href} 
                             href={item.href}
                             onClick={closeMenu}
-                            className="mobile-nav-item"
+                            className={`mobile-nav-item ${isActive ? 'active' : ''}`}
                         >
                             {t(item.label)}
                         </Link>
-                    ))}
+                    )})}
                     <Link 
                         href="/quote" 
                         onClick={closeMenu}

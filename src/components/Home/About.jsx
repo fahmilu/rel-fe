@@ -21,9 +21,11 @@ const About = ({ data }) => {
                             <Image src={service.image} alt={service.title} width={100} height={100} />
                         </div>
                         <h4>{t(service.title)}</h4>
-                        <svg xmlns="http://www.w3.org/2000/svg" width={372} height={12} viewBox="0 0 372 12" fill="none">
-                            <path d="M372 0H0L22.7008 12H372V0Z" fill="#E1E1E1" />
-                        </svg>
+                        <div className="home__about__services__service__line">
+                            <svg xmlns="http://www.w3.org/2000/svg" width={'inherit'} height={'inherit'} style={{ width: '100%', height: '100%' }} viewBox="0 0 372 12" fill="none">
+                                <path d="M372 0H0L22.7008 12H372V0Z" fill="#E1E1E1" />
+                            </svg>
+                        </div>
                     </div>
                 ))}
             </div>

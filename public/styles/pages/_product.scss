@@ -1,5 +1,118 @@
 .product__index {
   .card__list {
-    @apply grid grid-cols-2 lg:grid-cols-3 lg:gap-x-8 lg:gap-y-10 gap-5;
+    @apply grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-3 lg:gap-x-8 lg:gap-y-10 gap-5;
+  }
+}
+
+.product__detail {
+  &__title {
+    @apply md:pt-[160px] pt-[100px] pb-8 bg-[#231F20] justify-end;
+
+    h2 {
+      @apply text-white order-last;
+    }
+  }
+
+  &__title,
+  &__content {
+    .container {
+      @apply grid grid-cols-1 md:grid-cols-2 gap-8;
+    }
+  }
+
+  &__gallery {
+    @apply md:absolute md:top-0 md:left-0 w-full;
+  }
+
+  .detail__gallery .gallery__main {
+    @apply before:hidden;
+
+    .gallery__slide {
+      @apply aspect-[626/468] bg-white flex items-center justify-center #{!important};
+
+      img {
+        @apply object-contain w-[90%] mx-auto h-[90%];
+      }
+    }
+
+    .gallery__arrows {
+      .gallery__arrow {
+        @apply w-8 h-8;
+      }
+    }
+  }
+
+  .detail__gallery .gallery__thumbnails {
+    .slick-track {
+      @apply flex gap-3;
+    }
+
+  }
+
+  &__info {
+    @apply flex flex-col py-8;
+
+    &__item {
+      @apply flex items-start md:flex-row flex-col py-4 border-b border-[#E1E1E1];
+
+      > div {
+        &:first-child {
+          @apply md:min-w-[220px] md:max-w-[220px];
+          @apply text-base md:text-lg md:text-[#868686] text-orange font-semibold;
+        }
+
+        &:last-child {
+          @apply text-base md:text-lg text-[#231F20];
+          
+
+          ul {
+            @apply list-disc list-inside;
+
+            li {
+              @apply mb-2 last:mb-0;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__guide {
+    @apply pt-12 pb-20;
+
+    .container {
+      @apply max-w-[1000px] flex flex-col gap-4;
+    }
+
+    &__content {
+      p {
+        @apply mb-4 last:mb-0;
+      }
+
+      ul {
+        @apply list-disc list-inside;
+
+        li {
+          @apply mb-2 last:mb-0;
+        }
+      }
+    }
+
+    &__actions {
+      @apply flex flex-col md:flex-row gap-4;
+
+      .btn__secondary {
+        @apply border-orange text-orange bg-orange/10 hover:bg-orange/20 transition-all duration-300;
+      }
+    }
+
+  }
+}
+
+.related__products {
+  @apply py-[56px] bg-[#F6F6F6];
+
+  &__list {
+    @apply grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-3 lg:gap-x-8 lg:gap-y-10 gap-2;
   }
 }

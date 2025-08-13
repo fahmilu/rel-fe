@@ -15,7 +15,7 @@ const Products = ({ data }) => {
                 </div>
                 <div className="home__products__list">
                     {data.products.map((product, index) => (
-                        <Link href="/product/detail-product" className="home__products__list__item" key={index}>
+                        <Link href="/products/detail-product" className="home__products__list__item" key={index}>
                             <div className="home__products__list__item__image">
                                 <Image src={product.image} alt={product.title} fill className="object-cover" />
                             </div>
@@ -25,7 +25,7 @@ const Products = ({ data }) => {
                         </Link>
                     ))}
                 </div>
-                <Link href="/products" className="btn btn__primary">{t('home.product.button')}</Link>
+                <Link href="/products" className="btn btn__primary max-sm:w-full">{t('home.product.button')}</Link>
             </div>
         </section>
     );

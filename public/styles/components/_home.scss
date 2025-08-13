@@ -1,13 +1,13 @@
 .home {
     &__about {
-        @apply py-[128px] bg-[url('/imgs/bg-about.jpg')] bg-[auto_100%] bg-center bg-no-repeat;
+        @apply md:py-[128px] sm:py-[64px] py-[40px] bg-[url('/imgs/bg-about.jpg')] bg-[auto_100%] bg-center bg-no-repeat;
 
         .container {
-            @apply flex flex-row gap-10 justify-between;
+            @apply flex flex-col sm:flex-row gap-10 justify-between;
         }
 
         &__content {
-            @apply max-w-[628px] w-[70%];
+            @apply max-w-[628px] sm:w-[70%];
 
             label {
                 @apply mb-2;
@@ -25,7 +25,7 @@
         }
 
         &__services {
-            @apply w-[30%] max-w-[380px] flex flex-col gap-8;
+            @apply sm:w-[30%] w-full sm:max-w-[380px] flex flex-col gap-8;
 
             &__service {
                 @apply flex flex-col gap-2 items-end;
@@ -46,17 +46,17 @@
     }
 
     &__products {
-        @apply py-[64px] bg-[url('/imgs/bg-product.jpg')] bg-cover bg-center bg-no-repeat;
+        @apply sm:py-[64px] py-[40px] bg-[url('/imgs/bg-product.jpg')] bg-cover bg-center bg-no-repeat;
 
         .container {
             @apply flex flex-col gap-12 items-center justify-center;
         }
 
         &__list {
-            @apply grid grid-cols-3 gap-6 w-full;
+            @apply grid sm:grid-cols-3 grid-cols-1 lg:gap-6 gap-4 w-full;
 
             &__item {
-                @apply flex flex-col gap-2 items-start justify-center rounded-lg overflow-hidden h-[450px] relative;
+                @apply flex flex-col gap-2 items-start justify-center rounded-lg overflow-hidden lg:h-[450px] h-[300px] relative;
 
                 &__image {
                     @apply w-full h-full absolute top-0 left-0 rounded-lg overflow-hidden transition-all duration-300;
@@ -81,17 +81,21 @@
     }
 
     &__industries {
-        @apply py-[120px];
+        @apply md:py-[120px] sm:py-[64px] py-[40px];
 
         .container {
             @apply flex flex-col gap-4 items-center justify-center;
         }
 
         &__list {
-            @apply grid grid-cols-5 gap-8 w-full mt-[100px];
+            @apply flex max-md:flex-nowrap max-md:overflow-x-auto md:grid md:grid-cols-5 2xl:gap-8 gap-4 w-full sm:mt-[100px] mt-[40px] max-md:px-5 max-md:w-[calc(100%+40px)];
 
             &__item {
-                @apply flex flex-col pt-[110px] pb-[69px] gap-8 items-center justify-center rounded-lg overflow-hidden relative;
+                @apply flex flex-col pt-[110px] 2xl:pb-[69px] pb-[40px] gap-8 items-center justify-center rounded-lg overflow-hidden relative max-md:min-w-[180px];
+
+                h4 {
+                    @apply max-2xl:text-[20px]/[150%] text-[16px]/[150%];
+                }
 
                 &:nth-child(odd) {
                     background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="230" height="333" viewBox="0 0 230 333" fill="none"><path d="M0 81.2994C0 76.0618 3.39701 71.4292 8.39238 69.8546L230 0V370H0V81.2994Z" fill="%23F6F6F6"/></svg>');
@@ -108,7 +112,7 @@
                 }
 
                 &__image {
-                    @apply relative w-[115px] h-[115px];
+                    @apply relative 2xl:w-[115px] 2xl:h-[115px] w-[80px] h-[80px];
                 }
             }
         }
@@ -117,7 +121,7 @@
         @apply relative pt-[80px] pb-[65px] bg-[#231F20] before:content-[''] before:absolute before:top-0 before:left-0 before:w-full before:h-full before:bg-[url('/imgs/bg-quote.svg')] before:bg-[100%_auto] before:bg-[top_center] before:bg-no-repeat;
 
         .container {
-            @apply flex flex-row items-center justify-between gap-12 min-h-[270px] relative;
+            @apply flex flex-col md:flex-row md:items-center justify-between md:gap-12 gap-5 md:min-h-[270px] min-h-[200px] relative max-md:text-center;
         }
 
         &__content {
@@ -129,16 +133,16 @@
         @apply bg-[#231F20] py-[56px];
 
         .container {
-            @apply px-0 flex flex-row;
+            @apply px-0 flex flex-col gap-y-10 md:flex-row;
         }
 
         &__images {
-            @apply w-[calc(100%-42%)] h-[700px] relative flex flex-row gap-2 pl-[64px];
+            @apply md:w-[calc(100%-42%)] w-full xl:h-[700px] sm:h-[500px] h-[320px] relative flex flex-row xs:gap-2 gap-1 xl:pl-[64px] sm:pl-[40px] pl-[20px];
 
             &__item {
                 @apply w-full h-full relative overflow-hidden rounded-lg transition-all duration-300;
                 &:not(.active) {
-                    @apply w-[60px] opacity-50 grayscale;
+                    @apply xs:w-[60px] w-[40px] opacity-50 grayscale;
                 }
                 &.active {
                     @apply flex-grow;
@@ -147,11 +151,11 @@
         }
 
         &__content {
-            @apply w-[42%] flex flex-col gap-4 justify-between px-[72px];
+            @apply md:w-[42%] w-full flex flex-col gap-4 justify-between xl:px-[72px] sm:px-[40px] px-5;
 
             &__text {
                 &__item {
-                    @apply flex-col pt-[60px] gap-12 hidden;
+                    @apply flex-col md:pt-[60px] pt-[16px] md:gap-12 gap-5 hidden;
                     
                     &.active {
                         @apply flex;
@@ -168,7 +172,7 @@
             }
             
             &__arrows {
-                @apply flex flex-row gap-4 items-center justify-start;
+                @apply flex flex-row gap-4 items-center justify-start max-md:pt-10;
 
                 &__arrow {
                     @apply w-[32px] h-[32px] rounded-full relative;

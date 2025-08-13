@@ -1,16 +1,16 @@
 
 h1 {
-    @apply lg:text-heading-1 font-semibold text-heading-1-mobile;
+    @apply lg:text-heading-1 font-semibold xs:text-heading-1-mobile text-[32px]/[150%];
 }
 
 h2 {
-    @apply lg:text-heading-2 font-semibold text-heading-2-mobile;
+    @apply lg:text-heading-2 font-semibold xs:text-heading-2-mobile text-[24px]/[150%];
 }
 
 h3 {
-    @apply lg:text-heading-3 font-semibold text-heading-3-mobile;
+    @apply lg:text-heading-3 font-semibold xs:text-heading-3-mobile text-[20px]/[150%];
 }
 
 h4 {
-    @apply lg:text-heading-4 font-semibold text-heading-4-mobile;
+    @apply lg:text-heading-4 font-semibold xs:text-heading-4-mobile text-[18px]/[150%];
 }
