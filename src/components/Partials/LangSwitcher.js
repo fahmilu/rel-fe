@@ -4,6 +4,7 @@ import { useRouter } from 'next/navigation';
 import { usePathname } from 'next/navigation';
 import i18nConfig from '../../../i18nConfig';
 import { useEffect, useState, useRef } from "react";
+import pages from "../../../data/pages.json";
 
 const LangSwitcher = () => {
     const { i18n } = useTranslation();
@@ -44,6 +45,58 @@ const LangSwitcher = () => {
         },
     ];
 
+    // Function to get localized slug for a given page
+    const getLocalizedSlug = (currentSlug, targetLocale) => {
+        // Find the page that contains the current slug
+        for (const [pageKey, pageData] of Object.entries(pages)) {
+            // Check if current slug matches any locale's slug for this page
+            for (const [locale, localeData] of Object.entries(pageData)) {
+                if (localeData.slug === currentSlug) {
+                    // Return the target locale's slug for this page
+                    return pageData[targetLocale]?.slug || pageKey;
+                }
+            }
+        }
+        // If no match found, return the current slug
+        return currentSlug;
+    };
+
+    // Function to generate the new pathname with localized slug
+    const generateLocalizedPath = (currentPath, currentLocale, targetLocale) => {
+        // Extract the slug from the current path
+        const pathParts = currentPath.split('/');
+        const currentSlug = pathParts[pathParts.length - 1];
+        // console.log('currentLocale', currentLocale);
+        if (currentLocale === 'id') {
+            if (pathParts.length >= 3) {
+                const localizedSlug = getLocalizedSlug(currentSlug, targetLocale);
+                return `/${targetLocale}/${localizedSlug}`;
+            } else {
+                return `/${targetLocale}`;
+            }
+        } else if (currentLocale === 'en') {
+            if (pathParts.length >= 2) {
+                const localizedSlug = getLocalizedSlug(currentSlug, targetLocale);
+                return `/${targetLocale}/${localizedSlug}`;
+            } else {
+                return `/${targetLocale}`;
+            }
+        }
+        // // If we're on the home page (just locale)
+        // if (pathParts.length === 2 && currentLocale == 'en') {
+        //     return `/${targetLocale}`;
+        // }
+        
+        // // If we have a slug, get the localized version
+        // if (pathParts.length >= 3 && currentLocale === 'id') {
+        //     const localizedSlug = getLocalizedSlug(currentSlug, targetLocale);
+        //     return `/${targetLocale}/${localizedSlug}`;
+        // }
+        
+        // Fallback
+        return `/${targetLocale}`;
+    };
+
     const handleChange = e => {
         const newLocale = e;
 
@@ -54,17 +107,11 @@ const LangSwitcher = () => {
         const expires = date.toUTCString();
         document.cookie = `NEXT_LOCALE=${newLocale};expires=${expires};path=/`;
 
-        // redirect to the new locale path
-        if (
-            currentLocale === i18nConfig.defaultLocale &&
-            !i18nConfig.prefixDefault
-        ) {
-            router.push('/' + newLocale + currentPathname);
-        } else {
-            router.push(
-                currentPathname.replace(`/${currentLocale}`, `/${newLocale}`)
-            );
-        }
+        // Generate the new localized path
+        const newPath = generateLocalizedPath(currentPathname, currentLocale, newLocale);
+        
+        // Navigate to the new path
+        router.push(newPath);
         setIsOpen(false);
         router.refresh();
     };

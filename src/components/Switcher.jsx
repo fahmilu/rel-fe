@@ -2,7 +2,7 @@ import { HomeBanner, PageBanner } from "./Banner";
 import { About, Quote, Products, Industries, Projects } from "./Home";
 import { Products as ProductsIndex, Projects as ProjectsIndex, Industry as IndustryIndex, Contact as ContactIndex } from "./Pages";
 
-const Switcher = ({ type, data }) => {
+const Switcher = ({ type, data, slug, locale }) => {
     switch (type) {
         case "home-banner":
             return <HomeBanner data={data} />;
@@ -17,7 +17,7 @@ const Switcher = ({ type, data }) => {
         case "home-projects":
             return <Projects data={data} />;
         case "banner":
-            return <PageBanner data={data} />;
+            return <PageBanner data={data} slug={slug} locale={locale} />;
         case "product-index":
             return <ProductsIndex data={data} />;
         case "project-index":

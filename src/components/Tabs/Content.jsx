@@ -3,9 +3,12 @@ import { useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
+import { getLocalizedHref } from "@/utils/navigation";
 
 export default function TabsContent({ tabs, activeTab }) {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const currentLocale = i18n.language;
+
   useEffect(() => {
     const video = document.querySelector(".tab__content__media video");
     if (video) {
@@ -61,7 +64,7 @@ export default function TabsContent({ tabs, activeTab }) {
                 </div>
             </div>
             <div className="md:flex">
-                <Link href="/" className="btn btn__primary">{t("industry.button.find")}</Link>
+                <Link href={getLocalizedHref('industries', currentLocale)} className="btn btn__primary">{t("industry.button.find")}</Link>
             </div>
         </div>
       ))}

@@ -4,32 +4,21 @@ import LangSwitcher from "./LangSwitcher";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
+import { getLocalizedNavigationItems } from "@/utils/navigation";
 
 const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const navItems = [
-        {
-            label: "nav.products",
-            href: "/products",
-        },
-        {
-            label: "nav.industry",
-            href: "/industry",
-        },
-        {
-            label: "nav.projects",
-            href: "/projects",
-        },
-        {
-            label: "nav.contact",
-            href: "/contact",
-        }
-    ];
+    const { i18n } = useTranslation();
+    const currentLocale = i18n.language;
+    
+    // Get localized navigation items
+    const navItems = getLocalizedNavigationItems(currentLocale);
 
   return (
     <header className={`header ${isMenuOpen ? 'open-menu' : ''}`}>
         <div className="container">
-            <Link href="/" className="header__logo">
+            <Link href={`/${currentLocale}`} className="header__logo">
                 <Image src="/imgs/logo.png" alt="Logo" fill className="object-contain" />
             </Link>
             <Desktop navItems={navItems} />

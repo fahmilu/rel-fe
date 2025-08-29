@@ -3,27 +3,15 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useTranslation } from 'react-i18next';
 import SocialLinks from './SocialLinks';
+import { getLocalizedNavigationItems } from "@/utils/navigation";
 
 const Footer = () => {
-    const { t } = useTranslation();
-    const navItems = [
-        {
-            label: "nav.products",
-            href: "/products",
-        },
-        {
-            label: "nav.projects",
-            href: "/projects",
-        },
-        {
-            label: "nav.industry",
-            href: "/industry",
-        },
-        {
-            label: "nav.contact",
-            href: "/contact",
-        }
-    ];
+    const { t, i18n } = useTranslation();
+    const currentLocale = i18n.language;
+    
+    // Get localized navigation items
+    const navItems = getLocalizedNavigationItems(currentLocale);
+    
     return (
         <footer className="footer">
             <div className="container">
@@ -72,10 +60,10 @@ const Footer = () => {
                             <span>Copyright © 2025 REL | PT. RESOURCE EQUIPMENT INDONESIA</span>
                         </div>
                         <div className="footer__link">
-                            <Link href="/" className="footer__link">Privacy Policy</Link>
+                            <Link href={`/${currentLocale}`} className="footer__link">Privacy Policy</Link>
                         </div>
                         <div className="footer__link">
-                            <Link href="/" className="footer__link">Terms of Service</Link>
+                            <Link href={`/${currentLocale}`} className="footer__link">Terms of Service</Link>
                         </div>
                     </div>
                 </div>

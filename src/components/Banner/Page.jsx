@@ -1,15 +1,17 @@
 import Image from "next/image";
-
-const PageBanner = ({ data }) => {
+import { fetchPageData } from "@/services/api";
+const PageBanner = async ({ data, slug, locale }) => {
+    const dataBanner = await fetchPageData(slug, locale);
     return (
         <div>
             <div className="banner__page">
-                <Image src={data.image} alt={data.title} fill className="object-cover" />
+                {dataBanner.data.image && <Image src={`${process.env.NEXT_BASE_URL}${dataBanner.data.image}`} alt={dataBanner.data.title} fill className="object-cover hidden md:block" />}
+                {dataBanner.data.image_mobile && <Image src={`${process.env.NEXT_BASE_URL}${dataBanner.data.image_mobile}`} alt={dataBanner.data.title} fill className="object-cover block md:hidden" />}
                 <div className="banner__page__overlay"></div>
                 <div className="container">
                     <div className="page__banner__content">
-                        <h1>{data.title}</h1>
-                        <h4>{data.description}</h4>
+                        <h1>{dataBanner.data.title}</h1>
+                        <h4 dangerouslySetInnerHTML={{ __html: dataBanner.data.content }} />
                     </div>
                 </div>
             </div>

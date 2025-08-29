@@ -1,6 +1,11 @@
+"use client";
 import Link from "next/link";
+import { useTranslation } from "react-i18next";
 
 const SocialLinks = ({ isDark = false }) => {
+    const { i18n } = useTranslation();
+    const currentLocale = i18n.language;
+
     return (
         <div className="footer__bottom-left max-md:mt-2">
             <Link href="/">

@@ -2,9 +2,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
+import { getLocalizedHref } from "@/utils/navigation";
 
 const Products = ({ data }) => {
-    const { t } = useTranslation();
+    const { t, i18n } = useTranslation();
+    const currentLocale = i18n.language;
 
     return (
         <section className="home__products">
@@ -15,7 +17,7 @@ const Products = ({ data }) => {
                 </div>
                 <div className="home__products__list">
                     {data.products.map((product, index) => (
-                        <Link href="/products/detail-product" className="home__products__list__item" key={index}>
+                        <Link href={`/${currentLocale}/products/detail-product`} className="home__products__list__item" key={index}>
                             <div className="home__products__list__item__image">
                                 <Image src={product.image} alt={product.title} fill className="object-cover" />
                             </div>
@@ -25,10 +27,12 @@ const Products = ({ data }) => {
                         </Link>
                     ))}
                 </div>
-                <Link href="/products" className="btn btn__primary max-sm:w-full">{t('home.product.button')}</Link>
+                <div className="home__products__footer">
+                    <Link href={getLocalizedHref('product', currentLocale)} className="btn btn__primary max-sm:w-full">{t('home.product.button')}</Link>
+                </div>
             </div>
         </section>
     );
-}
+};
 
 export default Products;

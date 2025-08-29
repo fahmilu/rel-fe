@@ -1,0 +1,58 @@
+{
+    "home": {
+        "en": {
+            "slug": "home"
+        },
+        "id": {
+            "slug": "beranda"
+        }
+    },
+    "product": {
+        "en": {
+            "slug": "product"
+        },
+        "id": {
+            "slug": "produk"
+        }
+    },
+    "industries": {
+        "en": {
+            "slug": "industries"
+        },
+        "id": {
+            "slug": "industri"
+        }
+    },
+    "projects": {
+        "en": {
+            "slug": "projects"
+        },
+        "id": {
+            "slug": "proyek"
+        }
+    },
+    "contact-us": {
+        "en": {
+            "slug": "contact-us"
+        },
+        "id": {
+            "slug": "hubungi-kami"
+        }
+    },
+    "privacy-policy": {
+        "en": {
+            "slug": "privacy-policy"
+        },
+        "id": {
+            "slug": "kebijakan-privasi"
+        }
+    },
+    "terms-of-service": {
+        "en": {
+            "slug": "terms-of-service"
+        },
+        "id": {
+            "slug": "syarat-dan-ketentuan"
+        }
+    }
+}

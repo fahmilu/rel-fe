@@ -7,7 +7,7 @@ import { usePathname } from "next/navigation";
 const Desktop = ({ navItems }) => {
     const { t } = useTranslation();
     const pathname = usePathname();
-
+    console.log('navItems', navItems);
     // Helper to check if current path matches or starts with nav item href
     const isNavItemActive = (href) => {
         // Remove trailing slash for comparison

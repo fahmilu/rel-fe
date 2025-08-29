@@ -1,9 +1,7 @@
 "use client";
 import Link from "next/link";
-import { useParams } from "next/navigation";
-const NotFoundIndex = () => {
-    const { locale } = useParams();
-    // const locale = "en";
+
+const NotFound = ({ locale }) => {
     return (
             <section className="bg-[white]">
                 <div className="container !max-w-[978px]">            
@@ -15,6 +13,6 @@ const NotFoundIndex = () => {
                 </div>
             </section>
     );
-}
+};
 
-export default NotFoundIndex;
+export default NotFound;

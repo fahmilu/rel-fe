@@ -1,14 +1,14 @@
 "use client";
 
 import { useTranslation } from "react-i18next";
-import dataProducts from "@/data/product.json";
-import ProductCard from "@/components/Cards/Product";
 import Link from "next/link";
-export default function RelatedProducts() {
-    const { i18n } = useTranslation();
-    console.log(i18n.language);
-    const dt = dataProducts.data.slice(0, 3);
-    
+import { getLocalizedHref } from "@/utils/navigation";
+import ProductCard from "@/components/Cards/Product";
+
+const Related = ({ data }) => {
+    const { t, i18n } = useTranslation();
+    const currentLocale = i18n.language;
+
     return (
         <section className="related__products">
             <div className="container">
@@ -21,16 +21,18 @@ export default function RelatedProducts() {
                     </div>
                 </div>
                 <div className="related__products__list">
-                    {dt.map((item, index) => (
+                    {data.map((item, index) => (
                         <ProductCard key={index} data={item} />
                     ))}
                 </div>
                 <div className="mt-8  md:hidden">
-                    <Link href="/products" className="btn btn__primary">
+                    <Link href={getLocalizedHref('product', currentLocale)} className="btn btn__primary">
                         {i18n.language === 'id' ? 'Lihat Semua Produk' : 'View All Products'}
                     </Link>
                 </div>
             </div>
         </section>
-    )
-}
+    );
+};
+
+export default Related;
