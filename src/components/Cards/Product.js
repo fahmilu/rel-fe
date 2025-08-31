@@ -1,28 +1,32 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
-
+import { getLocalizedHref } from "@/utils/navigation";
+import { useTranslation } from "react-i18next";
 const ProductCard = ({ data }) => {
+    const { i18n } = useTranslation();
+    const currentLocale = i18n.language;
     return (
-    <Link href={`/products/detail-product`} className="card__product">
+    <Link href={`${getLocalizedHref('products', currentLocale)}/${data.slug}`} className="card__product">
             <div className="card__product__image-area">
                 <div className="card__product__image-area__image">
-                    <Image src={data.image} alt={data.title} fill className="object-cover" />
+                    <Image src={`${process.env.NEXT_PUBLIC_BASE_URL}${data.image}`} alt={data.name} fill className="object-cover" />
                 </div>
             </div>
             <div className="card__product__content">
                 <div className="card__product__content__top">
-                    <h4>{data.title}</h4>
+                    <h4>{data.name}</h4>
                     <div className="card__product__content__top__info">
-                        <span>Flow Rate</span>
-                        <span>{data.flowRate}</span>
+                        <span>{currentLocale === 'id' ? data.specifications[3].id : data.specifications[3].en}</span>
+                        <span>{data.specifications[3].value}</span>
                     </div>
                     <div className="card__product__content__top__info">
-                        <span>Power</span>
-                        <span>{data.power}</span>
+                        <span>{currentLocale === 'id' ? data.specifications[4].id : data.specifications[4].en}</span>
+                        <span>{data.specifications[4].value}</span>
                     </div>
                     <div className="card__product__content__top__info">
-                        <span>Solids Handling</span>
-                        <span>{data.flowRate}</span>
+                        <span>{currentLocale === 'id' ? data.specifications[5].id : data.specifications[5].en}</span>
+                        <span>{data.specifications[5].value}</span>
                     </div>
                 </div>
                 <div className="card__product__content__read-more">

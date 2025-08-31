@@ -14,7 +14,7 @@ export default function TabsList({ tabs, activeTab, setActiveTab }) {
             <div className="tab__list__content">
                 <div className="tab__list__title">{t("industry.list.title")}</div>
                 <div className="tab__list__button" onClick={() => setIsOpen(!isOpen)}>
-                <span>{t(tabs[activeTab].name)}</span>
+                <span>{t(tabs[activeTab].title)}</span>
                     <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} viewBox="0 0 24 24" fill="none">
                     <mask id="mask0_4014_11" style={{maskType: 'alpha'}} maskUnits="userSpaceOnUse" x={0} y={0} width={24} height={24}>
                         <rect width={24} height={24} fill="#D9D9D9" />
@@ -28,7 +28,7 @@ export default function TabsList({ tabs, activeTab, setActiveTab }) {
                 <div className={`tab__list__content__list ${isOpen ? "active" : ""}`}>
                     {tabs.map((tab, index) => (
                         <div key={index} className={`tab__list__item ${activeTab === index ? "active" : ""}`} onClick={() => handleClick(index)}>
-                            <span>{t(tab.name)}</span>
+                            <span>{t(tab.title)}</span>
                         </div>
                     ))}
                 </div>

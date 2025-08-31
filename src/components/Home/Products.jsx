@@ -1,34 +1,31 @@
-'use client';
 import Image from "next/image";
 import Link from "next/link";
-import { useTranslation } from "react-i18next";
 import { getLocalizedHref } from "@/utils/navigation";
+import { fetchData } from "@/services/api";
 
-const Products = ({ data }) => {
-    const { t, i18n } = useTranslation();
-    const currentLocale = i18n.language;
-
+const Products = async ({ data, locale }) => {
+    const { data: products } = await fetchData('products', locale);
     return (
         <section className="home__products">
             <div className="container">
                 <div className="flex flex-col gap-2 items-center justify-center">
-                    <label className="title__label">{t(data.label)}</label>
-                    <h4 className="text-white">{t(data.title)}</h4>
+                    <label className="title__label">{data.intro}</label>
+                    <h4 className="text-white">{data.title}</h4>
                 </div>
                 <div className="home__products__list">
-                    {data.products.map((product, index) => (
-                        <Link href={`/${currentLocale}/products/detail-product`} className="home__products__list__item" key={index}>
+                    {products.slice(0, 3).map((product, index) => (
+                        <Link href={`${getLocalizedHref('products', locale)}/${product.slug}`} className="home__products__list__item" key={index}>
                             <div className="home__products__list__item__image">
-                                <Image src={product.image} alt={product.title} fill className="object-cover" />
+                                <Image src={`${process.env.NEXT_PUBLIC_BASE_URL}${product.image}`} alt={product.name} fill className="object-cover" />
                             </div>
                             <div className="home__products__list__item__content">
-                                <h3 className="text-white">{product.title}</h3>
+                                <h3 className="text-white">{product.name}</h3>
                             </div>
                         </Link>
                     ))}
                 </div>
                 <div className="home__products__footer">
-                    <Link href={getLocalizedHref('product', currentLocale)} className="btn btn__primary max-sm:w-full">{t('home.product.button')}</Link>
+                    <Link href={getLocalizedHref('products', locale)} className="btn btn__primary max-sm:w-full">{data.button_label}</Link>
                 </div>
             </div>
         </section>

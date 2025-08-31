@@ -14,7 +14,7 @@ const Quote = ({ data }) => {
                 <h3 className="text-white">{t(data.subtitle)}</h3>
             </div>
             <div className="home__quote__links">
-                <Link href={data.button.link} className="btn btn__primary">{t(data.button.label)}</Link>
+                <Link href={data.button_url} className="btn btn__primary" target={`${data.url_type === 'internal' ? '_self' : '_blank'}`}>{t(data.button_label)}</Link>
             </div>
         </div>
     </section>

@@ -6,16 +6,16 @@ const Switcher = ({ type, data, slug, locale }) => {
     switch (type) {
         case "home-banner":
             return <HomeBanner data={data} />;
-        case "home-about":
+        case "paragraph-with-icons":
             return <About data={data} />;
-        case "home-quotes":
+        case "cta":
             return <Quote data={data} />;
-        case "home-products":
-            return <Products data={data} />;
-        case "home-industries":
+        case "featured-products":
+            return <Products data={data} locale={locale} />;
+        case "line-of-works":
             return <Industries data={data} />;
-        case "home-projects":
-            return <Projects data={data} />;
+        case "featured-projects":
+            return <Projects data={data} locale={locale} />;
         case "banner":
             return <PageBanner data={data} slug={slug} locale={locale} />;
         case "product-index":

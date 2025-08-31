@@ -1,16 +1,16 @@
-import { getDetailData } from "@/utils/detailData";
 import LayoutBase from "@/components/LayoutBase";
 import DetailPage from "@/components/DetailPage";
 
 export default async function Page({ params }) {
-    const { locale, slug, "detail-slug": detailSlug } = await params;
+    const { locale, slug, "detail_slug": detailSlug } = await params;
     
-    // Get page data based on slug
-    const data = await getDetailData(slug);
+    let pageSlug;
+    if(slug === 'projects' || slug === 'proyek') pageSlug = 'projects';
+    if(slug === 'products' || slug === 'produk') pageSlug = 'products';
     
     return (
         <LayoutBase locale={locale}>
-            <DetailPage slug={slug} detailSlug={detailSlug} data={data} />
+            <DetailPage slug={pageSlug} detailSlug={detailSlug} />
         </LayoutBase>
     );
 }

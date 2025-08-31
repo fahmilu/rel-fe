@@ -28,7 +28,7 @@
     }
 
     &__item {
-        @apply py-2 px-4 tracking-[0.64px] lg:text-base text-sm cursor-pointer whitespace-nowrap transition-all duration-300 text-[#868686] hover:text-orange;
+        @apply py-2 px-4 tracking-[0.64px] lg:text-base text-sm cursor-pointer whitespace-pre-wrap transition-all duration-300 text-[#868686] hover:text-orange;
 
         &.active {
             @apply text-orange bg-orange/10;
@@ -54,15 +54,16 @@
     &__benefits {
         @apply flex flex-col gap-4;
 
-        &__title {
+        h3 {
             @apply text-sm uppercase tracking-[1.2px] font-semibold text-[#868686];
         }
 
-        &__list {
+        ul {
             @apply list-disc list-inside;
 
-            &__item {
-                @apply mb-4 last:mb-0;
+            li {
+                @apply mb-2 flex flex-row items-center gap-2 before:content-[''] before:w-1 before:h-1 before:bg-[black] before:rounded-full last:mb-0;
+
             }
         }
     }

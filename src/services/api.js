@@ -3,6 +3,9 @@ export const fetchData = async (url, locale = 'en') => {
       const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/${url}`, {
         headers: {
           'Accept-Language': locale
+        },
+        next: {
+            revalidate: 60,
         }
       });
       if (!response.ok) {
@@ -46,6 +49,28 @@ export const getData = async (endpoint, locale = 'en') => {
         if (!response.ok) {
             throw new Error('Failed to fetch data');
         }
+        return await response.json();
+    } catch (error) {
+        console.log({error});
+        throw error;
+    }
+};
+
+export const pushData = async (endpoint, data, locale = 'en') => {
+    try {
+        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/${endpoint}`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept-Language': locale
+            },
+            body: JSON.stringify(data)
+        });
+        
+        if (!response.ok) {
+            throw new Error('Failed to push data');
+        }
+        
         return await response.json();
     } catch (error) {
         console.log({error});

@@ -65,17 +65,26 @@ const LangSwitcher = () => {
     const generateLocalizedPath = (currentPath, currentLocale, targetLocale) => {
         // Extract the slug from the current path
         const pathParts = currentPath.split('/');
+        console.log('pathParts', pathParts);
         const currentSlug = pathParts[pathParts.length - 1];
         // console.log('currentLocale', currentLocale);
         if (currentLocale === 'id') {
-            if (pathParts.length >= 3) {
+            if (pathParts.length === 4) {
+                const pageSlug = pathParts[pathParts.length - 2];
+                const localizedSlug = getLocalizedSlug(pageSlug, targetLocale);
+                return `/${targetLocale}/${localizedSlug}`;
+            } else if (pathParts.length === 3) {
                 const localizedSlug = getLocalizedSlug(currentSlug, targetLocale);
                 return `/${targetLocale}/${localizedSlug}`;
             } else {
                 return `/${targetLocale}`;
             }
         } else if (currentLocale === 'en') {
-            if (pathParts.length >= 2) {
+            if (pathParts.length === 3) {
+                const pageSlug = pathParts[pathParts.length - 2];
+                const localizedSlug = getLocalizedSlug(pageSlug, targetLocale);
+                return `/${targetLocale}/${localizedSlug}`;
+            } else if (pathParts.length === 2) {
                 const localizedSlug = getLocalizedSlug(currentSlug, targetLocale);
                 return `/${targetLocale}/${localizedSlug}`;
             } else {
@@ -110,10 +119,9 @@ const LangSwitcher = () => {
         // Generate the new localized path
         const newPath = generateLocalizedPath(currentPathname, currentLocale, newLocale);
         
-        // Navigate to the new path
-        router.push(newPath);
+        // Refresh the page by setting window.location
+        window.location.href = newPath;
         setIsOpen(false);
-        router.refresh();
     };
 
     return (

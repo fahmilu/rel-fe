@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 
-export default function Filter({ data, active, setActive }) {
+export default function Filter({ data, active, setActive, locale }) {
     const [isOpen, setIsOpen] = useState(false);
     const dropdownRef = useRef(null);
 
@@ -23,6 +23,7 @@ export default function Filter({ data, active, setActive }) {
         setIsOpen(false);
         setActive(item);
     }
+    
     return (
         <div className="filter__dropdown" ref={dropdownRef}>
             <div className="filter__button" onClick={() => setIsOpen(!isOpen)}>

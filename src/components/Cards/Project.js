@@ -1,21 +1,23 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
+import { getLocalizedHref } from "@/utils/navigation";
 const ProjectCard = ({ data }) => {
     const { i18n } = useTranslation();
+    const currentLocale = i18n.language;
     return (
-        <Link href={`/projects/project-detail`} className="card__project">
+        <Link href={`${getLocalizedHref('projects', currentLocale)}/${data.slug}`} className="card__project">
             <div className="card__project__image">
-                <Image src={data.image} alt={data.title} fill className="object-cover" />
+                <Image src={`${process.env.NEXT_PUBLIC_BASE_URL}${data.image}`} alt={data.title} fill className="object-cover" />
             </div>
             <div className="card__project__content">
                 <div className="card__project__content__top">
                     <h4>{data.title}</h4>
                     <div className="card__project__content__top__location">{data.location}</div>
-                    <div className="card__project__content__top__description">{data.description}</div>
+                    <div className="card__project__content__top__description">{data.lead}</div>
                 </div>
                 <div className="card__project__content__read-more">
-                    <span>{i18n.language === 'id' ? 'Lihat Studi Kasus' : 'View Case Study'}</span>
+                    <span>{currentLocale === 'id' ? 'Lihat Studi Kasus' : 'View Case Study'}</span>
                     <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} viewBox="0 0 24 24" fill="none">
                         <mask id="mask0_2036_732" style={{maskType: 'alpha'}} maskUnits="userSpaceOnUse" x={0} y={0} width={24} height={24}>
                             <rect width={24} height={24} fill="#D9D9D9" />

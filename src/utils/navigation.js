@@ -3,7 +3,7 @@ import pages from '@/data/pages.json';
 // Navigation configuration with page keys
 export const navigationConfig = [
     {
-        key: 'product',
+        key: 'products',
         label: 'nav.products',
     },
     {

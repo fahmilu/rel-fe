@@ -7,9 +7,9 @@
             "slug": "beranda"
         }
     },
-    "product": {
+    "products": {
         "en": {
-            "slug": "product"
+            "slug": "products"
         },
         "id": {
             "slug": "produk"

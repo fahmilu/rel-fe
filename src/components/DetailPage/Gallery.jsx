@@ -70,7 +70,7 @@ const DetailPageGallery = ({ data }) => {
                     {data.map((image, index) => (
                         <div key={index} className="gallery__slide">
                             <img 
-                                src={image} 
+                                src={`${process.env.NEXT_PUBLIC_BASE_URL}${image}`} 
                                 alt={`Gallery ${index + 1}`} 
                                 className="gallery__image"
                             />
@@ -121,7 +121,7 @@ const DetailPageGallery = ({ data }) => {
                     {data.map((image, index) => (
                         <div key={index} className="gallery__thumbnail">
                             <img 
-                                src={image} 
+                                src={`${process.env.NEXT_PUBLIC_BASE_URL}${image}`} 
                                 alt={`Thumbnail ${index + 1}`} 
                                 className="thumbnail__image"
                             />

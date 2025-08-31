@@ -1,45 +1,6 @@
 {
     "contents" : [
         {
-            "type": "home-banner",
-            "data": [
-                {
-                    "title": "Heavy-Duty Pump Rentals for Every Operation",
-                    "description": "Reliable, efficient, and ready for your project",
-                    "image": "/imgs/dummies/banner.png",
-                    "links": [
-                        {
-                            "label": "home.button.product",
-                            "url": "#",
-                            "class": "primary"
-                        },
-                        {
-                            "label": "home.button.talk",
-                            "url": "#",
-                            "class": "secondary"
-                        }
-                    ]
-                },
-                    {
-                        "title": "Water Pump Rentals for Industrial and Commercial Projects",
-                        "description": "Reliable, efficient, and ready for your project",
-                        "image": "/imgs/dummies/banner-2.png",
-                        "links": [
-                            {
-                                "label": "home.button.product",
-                                "url": "#",
-                                "class": "primary"
-                            },
-                            {
-                                "label": "home.button.talk",
-                                "url": "#",
-                                "class": "secondary"
-                            }
-                        ]
-                    }
-            ]
-        },
-        {
             "type": "home-about",
             "data": {
                 "title": "Comprehensive Mine Water and Slurry Solutions: Partnering for Success with PT Resource Equipment Indonesia",

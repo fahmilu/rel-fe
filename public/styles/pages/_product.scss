@@ -85,6 +85,20 @@
     }
 
     &__content {
+      @apply mb-4;
+
+      h2, h3 {
+        @apply mb-4;
+      }
+
+      h2 {
+        @apply text-heading-3;
+      }
+
+      h3 {
+        @apply text-heading-4;
+      }
+
       p {
         @apply mb-4 last:mb-0;
       }
@@ -93,9 +107,10 @@
         @apply list-disc list-inside;
 
         li {
-          @apply mb-2 last:mb-0;
+            @apply mb-2 flex flex-row items-center gap-2 before:content-[''] before:w-1 before:h-1 before:bg-[black] before:rounded-full last:mb-0;
+
         }
-      }
+    }
     }
 
     &__actions {

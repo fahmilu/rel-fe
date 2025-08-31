@@ -8,14 +8,14 @@ import ProductCard from "@/components/Cards/Product";
 const Related = ({ data }) => {
     const { t, i18n } = useTranslation();
     const currentLocale = i18n.language;
-
+    // console.log(currentLocale, data);
     return (
         <section className="related__products">
             <div className="container">
                 <div className="flex justify-between items-center md:flex-row flex-col gap-4 mb-10">
                     <h2>{i18n.language === 'id' ? 'Produk Lainnya' : 'Other Products'}</h2>
                     <div className="hidden md:block">
-                        <Link href="/products" className="btn btn__primary">
+                        <Link href={getLocalizedHref('products', currentLocale)} className="btn btn__primary">
                             {i18n.language === 'id' ? 'Lihat Semua Produk' : 'View All Products'}
                         </Link>
                     </div>
@@ -26,7 +26,7 @@ const Related = ({ data }) => {
                     ))}
                 </div>
                 <div className="mt-8  md:hidden">
-                    <Link href={getLocalizedHref('product', currentLocale)} className="btn btn__primary">
+                    <Link href={getLocalizedHref('products', currentLocale)} className="btn btn__primary">
                         {i18n.language === 'id' ? 'Lihat Semua Produk' : 'View All Products'}
                     </Link>
                 </div>
