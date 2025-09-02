@@ -44,7 +44,10 @@ export const getData = async (endpoint, locale = 'en') => {
         const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/${endpoint}`, {
             headers: {
                 'Accept-Language': locale
-            }
+            },
+            next: {
+                revalidate: 60,
+            },
         });
         if (!response.ok) {
             throw new Error('Failed to fetch data');
