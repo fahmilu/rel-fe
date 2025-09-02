@@ -28,7 +28,7 @@ export default function TabsContent({ tabs, activeTab }) {
             </div>
             <div className="tab__content__media">
                 <Image
-                    src={`${process.env.NEXT_PUBLIC_BASE_URL}${tab.image}`}
+                    src={`${process.env.NEXT_PUBLIC_ASSET_URL}/${tab.image}`}
                     alt={tab.title}
                     fill
                     className="object-cover"
@@ -41,7 +41,7 @@ export default function TabsContent({ tabs, activeTab }) {
                     {tab.products.map((product, index) => (
                         <Link href={`${getLocalizedHref('products', currentLocale)}/${product.slug}`} key={index} className="tab__content__suggested__list__item">
                             <div className="tab__content__suggested__list__item__image">
-                                <Image src={`${process.env.NEXT_PUBLIC_BASE_URL}${product.image}`} alt={product.name} fill className="object-cover" />
+                                <Image src={`${process.env.NEXT_PUBLIC_ASSET_URL}/${product.image}`} alt={product.name} fill className="object-cover" />
                             </div>
                             <div className="tab__content__suggested__list__item__content">
                                 <h4>{product.name}</h4>

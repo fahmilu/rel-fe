@@ -15,7 +15,7 @@ const About = ({ data }) => {
                 {data.icons.map((icon, index) => (
                     <div className="home__about__services__service" key={index}>
                         <div className="home__about__services__service__image">
-                            <Image src={`${process.env.NEXT_PUBLIC_BASE_URL}${icon.icon}`} alt={icon.title} width={100} height={100} />
+                            <Image src={`${process.env.NEXT_PUBLIC_ASSET_URL}/${icon.icon}`} alt={icon.title} width={100} height={100} />
                         </div>
                         <h4 className="text-right">{ icon.title }</h4>
                         <div className="home__about__services__service__line">

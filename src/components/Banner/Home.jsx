@@ -88,8 +88,8 @@ const HomeBanner = ({ data }) => {
               //   backgroundRepeat: "no-repeat",
               // }}
             >
-              {data.image && <Image src={`${process.env.NEXT_PUBLIC_BASE_URL}${data.image}`} alt={data.title} fill className="object-cover hidden md:block" />}
-              {data.image_mobile && <Image src={`${process.env.NEXT_PUBLIC_BASE_URL}${data.image_mobile}`} alt={data.title} fill className="object-cover block md:hidden" />}
+              {data.image && <Image src={`${process.env.NEXT_PUBLIC_ASSET_URL}/${data.image}`} alt={data.title} fill className="object-cover hidden md:block" />}
+              {data.image_mobile && <Image src={`${process.env.NEXT_PUBLIC_ASSET_URL}/${data.image_mobile}`} alt={data.title} fill className="object-cover block md:hidden" />}
               <div className="banner__home__overlay"></div>
               <div className="container">
                 <div className="banner__home__content">

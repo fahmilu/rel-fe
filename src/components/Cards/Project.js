@@ -8,7 +8,7 @@ const ProjectCard = ({ data }) => {
     return (
         <Link href={`${getLocalizedHref('projects', currentLocale)}/${data.slug}`} className="card__project">
             <div className="card__project__image">
-                <Image src={`${process.env.NEXT_PUBLIC_BASE_URL}${data.image}`} alt={data.title} fill className="object-cover" />
+                <Image src={`${process.env.NEXT_PUBLIC_ASSET_URL}/${data.image}`} alt={data.title} fill className="object-cover" />
             </div>
             <div className="card__project__content">
                 <div className="card__project__content__top">

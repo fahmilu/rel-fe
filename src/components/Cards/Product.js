@@ -10,7 +10,7 @@ const ProductCard = ({ data }) => {
     <Link href={`${getLocalizedHref('products', currentLocale)}/${data.slug}`} className="card__product">
             <div className="card__product__image-area">
                 <div className="card__product__image-area__image">
-                    <Image src={`${process.env.NEXT_PUBLIC_BASE_URL}${data.image}`} alt={data.name} fill className="object-cover" />
+                    <Image src={`${process.env.NEXT_PUBLIC_ASSET_URL}/${data.image}`} alt={data.name} fill className="object-cover" />
                 </div>
             </div>
             <div className="card__product__content">
