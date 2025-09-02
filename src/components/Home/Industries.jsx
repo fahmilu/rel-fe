@@ -13,7 +13,7 @@ const Industries = ({ data }) => {
                         <div key={index} className="home__industries__list__item">
                             <h4>{industry.title}</h4>
                             <div className="home__industries__list__item__image">
-                                <Image src={`${process.env.NEXT_PUBLIC_BASE_URL}${industry.image}`} alt={industry.title} fill className="object-cover" />
+                                <Image src={`${process.env.NEXT_PUBLIC_ASSET_URL}/${industry.image}`} alt={industry.title} fill className="object-cover" />
                             </div>
                         </div>
                     ))}

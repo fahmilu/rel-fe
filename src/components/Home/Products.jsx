@@ -16,7 +16,7 @@ const Products = async ({ data, locale }) => {
                     {products.slice(0, 3).map((product, index) => (
                         <Link href={`${getLocalizedHref('products', locale)}/${product.slug}`} className="home__products__list__item" key={index}>
                             <div className="home__products__list__item__image">
-                                <Image src={`${process.env.NEXT_PUBLIC_BASE_URL}${product.image}`} alt={product.name} fill className="object-cover" />
+                                <Image src={`${process.env.NEXT_PUBLIC_ASSET_URL}/${product.image}`} alt={product.name} fill className="object-cover" />
                             </div>
                             <div className="home__products__list__item__content">
                                 <h3 className="text-white">{product.name}</h3>

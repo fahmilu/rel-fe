@@ -5,8 +5,8 @@ const PageBanner = async ({ data, slug, locale }) => {
     return (
         <div>
             <div className="banner__page">
-                {dataBanner.data.image && <Image src={`${process.env.NEXT_PUBLIC_BASE_URL}${dataBanner.data.image}`} alt={dataBanner.data.title} fill className="object-cover hidden md:block" />}
-                {dataBanner.data.image_mobile && <Image src={`${process.env.NEXT_PUBLIC_BASE_URL}${dataBanner.data.image_mobile}`} alt={dataBanner.data.title} fill className="object-cover block md:hidden" />}
+                {dataBanner.data.image && <Image src={`${process.env.NEXT_PUBLIC_ASSET_URL}/${dataBanner.data.image}`} alt={dataBanner.data.title} fill className="object-cover hidden md:block" />}
+                {dataBanner.data.image_mobile && <Image src={`${process.env.NEXT_PUBLIC_ASSET_URL}/${dataBanner.data.image_mobile}`} alt={dataBanner.data.title} fill className="object-cover block md:hidden" />}
                 <div className="banner__page__overlay"></div>
                 <div className="container">
                     <div className="page__banner__content">
