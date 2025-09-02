@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
-
+import { pushData } from "@/services/api";
 const ContactForm = ({ t }) => {
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [submitSuccess, setSubmitSuccess] = useState(false);
@@ -23,9 +23,11 @@ const ContactForm = ({ t }) => {
         setIsSubmitting(true);
         try {
             // Simulate API call - replace with actual API endpoint
-            await new Promise(resolve => setTimeout(resolve, 1000));
+            // await new Promise(resolve => setTimeout(resolve, 1000));
+            const response = await pushData("contact", data);
+            console.log("Response:", response);
             
-            console.log("Form data:", data);
+            // console.log("Form data:", data);
             setSubmitSuccess(true);
             reset();
             
@@ -132,12 +134,12 @@ const ContactForm = ({ t }) => {
         {/* Help Type Field */}
         <div>
             <select
-                id="helpType"
-                {...register("helpType", {
+                id="subject"
+                {...register("subject", {
                     required: t("contact.form.error")
                 })}
                 className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors ${
-                    errors.helpType ? "border-red-300 bg-red-50" : "border-gray-300"
+                    errors.subject ? "border-red-300 bg-red-50" : "border-gray-300"
                 }`}
             >
                 <option value="">{t("contact.form.what")}</option>
@@ -147,8 +149,8 @@ const ContactForm = ({ t }) => {
                     </option>
                 ))}
             </select>
-            {errors.helpType && (
-                <p className="mt-1 text-sm text-red-600">{errors.helpType.message}</p>
+            {errors.subject && (
+                <p className="mt-1 text-sm text-red-600">{errors.subject.message}</p>
             )}
         </div>
 
