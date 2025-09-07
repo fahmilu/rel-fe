@@ -19,7 +19,7 @@
 
             &__description {
                 p {
-                    @apply mb-6 last:mb-0;
+                    @apply mb-6 last:mb-0 text-justify;
                 }
             }
         }

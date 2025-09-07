@@ -100,14 +100,14 @@
       }
 
       p {
-        @apply mb-4 last:mb-0;
+        @apply mb-4 last:mb-0 text-justify;
       }
 
       ul {
         @apply list-disc list-inside;
 
         li {
-            @apply mb-2 flex flex-row items-center gap-2 before:content-[''] before:w-1 before:h-1 before:bg-[black] before:rounded-full last:mb-0;
+            @apply mb-2 flex flex-row items-center gap-2 before:content-[''] before:w-1 before:h-1 before:bg-[black] before:rounded-full last:mb-0 text-justify;
 
         }
     }

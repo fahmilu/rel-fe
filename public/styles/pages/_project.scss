@@ -28,7 +28,7 @@
         }
 
         &:last-child {
-          @apply text-base md:text-lg text-[#231F20];
+          @apply text-base md:text-lg text-[#231F20] text-justify;
           
 
           ul {

@@ -25,7 +25,7 @@ const ContactForm = ({ t }) => {
             // Simulate API call - replace with actual API endpoint
             // await new Promise(resolve => setTimeout(resolve, 1000));
             const response = await pushData("contact", data);
-            console.log("Response:", response);
+            // console.log("Response:", response);
             
             // console.log("Form data:", data);
             setSubmitSuccess(true);
