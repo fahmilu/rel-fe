@@ -4,6 +4,8 @@ import RelatedProjects from "./Related";
 import { fetchData } from "@/services/api";
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
+import { getLocalizedHref } from "@/utils/navigation";
+import Link from "next/link";
 
 const DetailPageProject = ({ detailSlug }) => {
     
@@ -22,7 +24,7 @@ const DetailPageProject = ({ detailSlug }) => {
         fetchDataProject();
     }, [currentLocale]);
 
-    // console.log(data);
+    console.log(data);
     return (
         <>
             {data && (
@@ -60,7 +62,9 @@ const DetailPageProject = ({ detailSlug }) => {
                                     <div>
                                         <ul>
                                             {data.products.map((item, index) => (
-                                                <li key={index}>{item.name}</li>
+                                                <li key={index}>
+                                                    <Link className="hover:underline" href={`${getLocalizedHref('products', currentLocale)}/${item.slug}`}>{item.name}</Link>
+                                                </li>
                                             ))}
                                         </ul>
                                     </div>
