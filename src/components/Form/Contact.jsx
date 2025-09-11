@@ -111,9 +111,13 @@ const ContactForm = ({ t }) => {
                 id="phone"
                 {...register("phone", {
                     required: t("contact.form.error"),
-                    pattern: {
-                        value: /^[\+]?[1-9][\d]{0,15}$/,
-                        message: t("contact.form.error")
+                    minLength: {
+                        value: 8,
+                        message: "Phone number must be at least 8 characters"
+                    },
+                    maxLength: {
+                        value: 20,
+                        message: "Phone number must be less than 20 characters"
                     }
                 })}
                 className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors ${
