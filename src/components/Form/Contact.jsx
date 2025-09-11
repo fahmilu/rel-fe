@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
-import { pushData } from "@/services/api";
+import { pushData, getData } from "@/services/api";
 const ContactForm = ({ t }) => {
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [submitSuccess, setSubmitSuccess] = useState(false);
+    const [subjects, setSubjects] = useState([]);
+    const [loadingSubjects, setLoadingSubjects] = useState(true);
 
     const {
         register,
@@ -13,11 +15,26 @@ const ContactForm = ({ t }) => {
         watch
     } = useForm();
 
-    const helpOptions = [
-        { value: "rent", label: t("contact.form.rent") },
-        { value: "tech consult", label: t("contact.form.consult") },
-        { value: "other", label: t("contact.form.other") }
-    ];
+    // Fetch subjects from API
+    useEffect(() => {
+        const fetchSubjects = async () => {
+            try {
+                setLoadingSubjects(true);
+                const response = await getData('subjects');
+                if (response.success && response.data) {
+                    setSubjects(response.data);
+                }
+            } catch (error) {
+                console.error('Error fetching subjects:', error);
+                // Fallback to hardcoded options if API fails
+                setSubjects([]);
+            } finally {
+                setLoadingSubjects(false);
+            }
+        };
+
+        fetchSubjects();
+    }, [t]);
 
     const onSubmit = async (data) => {
         setIsSubmitting(true);
@@ -138,14 +155,17 @@ const ContactForm = ({ t }) => {
                 {...register("subject", {
                     required: t("contact.form.error")
                 })}
+                disabled={loadingSubjects}
                 className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors ${
                     errors.subject ? "border-red-300 bg-red-50" : "border-gray-300"
-                }`}
+                } ${loadingSubjects ? "bg-gray-100 cursor-not-allowed" : ""}`}
             >
-                <option value="">{t("contact.form.what")}</option>
-                {helpOptions.map((option) => (
-                    <option key={option.value} value={option.value}>
-                        {option.label}
+                <option value="">
+                    {loadingSubjects ? "Loading subjects..." : t("contact.form.what")}
+                </option>
+                {subjects.map((subject) => (
+                    <option key={subject.id} value={subject.id}>
+                        {subject.title}
                     </option>
                 ))}
             </select>
