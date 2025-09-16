@@ -107,7 +107,7 @@ const HomeBanner = ({ data }) => {
                         </Link>
                     }
                   </div>
-                  <div className="banner__home__scroll mt-10 hidden md:block">
+                  {/* <div className="banner__home__scroll mt-10 hidden md:block">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width={48}
@@ -122,7 +122,7 @@ const HomeBanner = ({ data }) => {
                         fill="white"
                       />
                     </svg>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </div>
