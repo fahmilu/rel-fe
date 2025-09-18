@@ -10,7 +10,7 @@ const Products = async ({ data, locale }) => {
             <div className="container">
                 <div className="flex flex-col gap-2 items-center justify-center">
                     <label className="title__label">{data.intro}</label>
-                    <h4 className="text-white">{data.title}</h4>
+                    <h4 className="text-white sm:text-left text-center">{data.title}</h4>
                 </div>
                 <div className="home__products__list">
                     {products.slice(0, 3).map((product, index) => (

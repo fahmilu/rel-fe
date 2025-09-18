@@ -31,7 +31,7 @@
     
     
         &__buttons {
-            @apply flex gap-2 justify-start flex-nowrap pt-2;
+            @apply flex gap-2 justify-start flex-nowrap pt-2 sm:flex-row flex-col;
 
             .btn {
                 @apply md:h-[50px] h-[42px] flex items-center justify-center max-md:px-3 max-xs:text-xs;

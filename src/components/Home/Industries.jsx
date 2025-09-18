@@ -6,8 +6,8 @@ const Industries = ({ data }) => {
     return (
         <section className="home__industries">
             <div className="container">
-                <label className="title__label">{data.intro}</label>
-                <h3>{data.title}</h3>
+                <label className="title__label sm:text-left text-center">{data.intro}</label>
+                <h3 className="sm:text-left text-center">{data.title}</h3>
                 <div className="home__industries__list">
                     {data.items.map((industry, index) => (
                         <div key={index} className="home__industries__list__item">

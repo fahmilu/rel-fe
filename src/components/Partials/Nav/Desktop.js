@@ -23,7 +23,7 @@ const Desktop = ({ navItems }) => {
 
     return (
         <nav className="header__nav-desktop">
-            {navItems.map((item) => {
+            {navItems.slice(0, -1).map((item) => {
                 const isActive = isNavItemActive(item.href);
                 return (
                     <Link 
@@ -35,7 +35,7 @@ const Desktop = ({ navItems }) => {
                     </Link>
                 );
             })}
-            <Link href="/quote" className="header__nav-item btn btn__secondary">
+            <Link href={navItems[navItems.length - 1].href} className="header__nav-item btn btn__secondary">
                 {t("home.button.quote")}
             </Link>
         </nav>

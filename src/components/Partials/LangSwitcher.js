@@ -6,7 +6,7 @@ import i18nConfig from '../../../i18nConfig';
 import { useEffect, useState, useRef } from "react";
 import pages from "../../../data/pages.json";
 
-const LangSwitcher = () => {
+const LangSwitcher = ({ isMobile=false }) => {
     const { i18n } = useTranslation();
     const [isOpen, setIsOpen] = useState(false);
     const currentLocale = i18n.language;
@@ -136,7 +136,7 @@ const LangSwitcher = () => {
                     </g>
                 </svg>
                 <span>
-                    {currentLocale}
+                    {isMobile ? languages.find(item => item.id === currentLocale)?.label : currentLocale}
                 </span>
                 <div className="header__lang-switcher-current-arrow">
                     <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} viewBox="0 0 24 24" fill="none">

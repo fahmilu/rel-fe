@@ -45,7 +45,7 @@ const Mobile = ({ navItems, isMenuOpen, setIsMenuOpen }) => {
             
             <nav className={`header__nav-mobile ${isMenuOpen ? 'open' : ''}`}>
                 <div className="mobile-menu-content">
-                    {navItems.map((item) => {
+                    {navItems.slice(0, -1).map((item) => {
                         const isActive = isNavItemActive(item.href);
                         return (
                         <Link 
@@ -58,15 +58,15 @@ const Mobile = ({ navItems, isMenuOpen, setIsMenuOpen }) => {
                         </Link>
                     )})}
                     <Link 
-                        href="/quote" 
+                        href={navItems[navItems.length - 1].href} 
                         onClick={closeMenu}
                         className="btn btn-primary"
                     >
                         {t("home.button.quote")}
                     </Link>
-                </div>
-                <div className="mobile-lang-switcher">
-                    <LangSwitcher />
+                    <div className="mobile-lang-switcher">
+                        <LangSwitcher isMobile={true} />
+                    </div>
                 </div>
             </nav>
         </div>
