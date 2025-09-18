@@ -68,7 +68,7 @@ const LangSwitcher = ({ isMobile=false }) => {
         console.log('pathParts', pathParts);
         const currentSlug = pathParts[pathParts.length - 1];
         // console.log('currentLocale', currentLocale);
-        if (currentLocale === 'en') {
+        // if (currentLocale === 'en') {
             if (pathParts.length === 4) {
                 const pageSlug = pathParts[pathParts.length - 2];
                 const localizedSlug = getLocalizedSlug(pageSlug, targetLocale);
@@ -79,18 +79,18 @@ const LangSwitcher = ({ isMobile=false }) => {
             } else {
                 return `/${targetLocale}`;
             }
-        } else if (currentLocale === 'id') {
-            if (pathParts.length === 3) {
-                const pageSlug = pathParts[pathParts.length - 2];
-                const localizedSlug = getLocalizedSlug(pageSlug, targetLocale);
-                return `/${targetLocale}/${localizedSlug}`;
-            } else if (pathParts.length === 2) {
-                const localizedSlug = getLocalizedSlug(currentSlug, targetLocale);
-                return `/${targetLocale}/${localizedSlug}`;
-            } else {
-                return `/${targetLocale}`;
-            }
-        }
+        // } else if (currentLocale === 'id') {
+        //     if (pathParts.length === 3) {
+        //         const pageSlug = pathParts[pathParts.length - 2];
+        //         const localizedSlug = getLocalizedSlug(pageSlug, targetLocale);
+        //         return `/${targetLocale}/${localizedSlug}`;
+        //     } else if (pathParts.length === 2) {
+        //         const localizedSlug = getLocalizedSlug(currentSlug, targetLocale);
+        //         return `/${targetLocale}/${localizedSlug}`;
+        //     } else {
+        //         return `/${targetLocale}`;
+        //     }
+        // }
         // // If we're on the home page (just locale)
         // if (pathParts.length === 2 && currentLocale == 'en') {
         //     return `/${targetLocale}`;

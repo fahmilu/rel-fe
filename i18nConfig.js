@@ -1,6 +1,6 @@
 const i18nConfig = {
-    locales: ['id', 'en'],
-    defaultLocale: 'id'
+    locales: ['id', 'en', 'my'],
+    defaultLocale: 'my'
   };
   
   module.exports = i18nConfig;
