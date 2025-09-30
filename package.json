@@ -6,7 +6,7 @@
     "dev": "next dev",
     "translation": "i18nexus pull",
     "build": "next build",
-    "start": "next start",
+    "start": "NODE_ENV=production node ./server.js",
     "lint": "next lint"
   },
   "dependencies": {
