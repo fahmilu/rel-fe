@@ -6,6 +6,11 @@ const nextConfig = {
                 protocol: 'http',
                 hostname: '103.41.206.96',
             },
+            {
+                protocol: 'https',
+                hostname: 'rel.co.id',
+                pathname: '/storage/**',
+            },
         ],
     },
     output: 'standalone',

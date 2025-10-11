@@ -1,6 +1,10 @@
 const i18nConfig = {
-    locales: ['id', 'en', 'my'],
-    defaultLocale: 'my'
+    locales: ['id', 'en'],
+    defaultLocale: 'id',
+    prefixDefault: true,
+    localeDetection: false,
+    browserLanguageDetection: false,
+    serverLanguageDetection: false,
   };
   
   module.exports = i18nConfig;
