@@ -1,6 +1,8 @@
 export const fetchData = async (url, locale = 'en') => {
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/${url}`, {
+        const url = `${process.env.NEXT_PUBLIC_API_URL}/${url}`;
+        console.log({url});
+      const response = await fetch(url, {
         headers: {
           'Accept-Language': locale
         },
@@ -22,7 +24,9 @@ export const fetchData = async (url, locale = 'en') => {
 
 export const fetchPageData = async (slug, locale = 'en') => {
     try {
-        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/pages/${slug}`, {
+        const url = `${process.env.NEXT_PUBLIC_API_URL}/pages/${slug}`;
+        console.log({url});
+        const response = await fetch(url, {
             headers: {
                 'Accept-Language': locale
             },
