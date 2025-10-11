@@ -1,8 +1,8 @@
 export const fetchData = async (url, locale = 'en') => {
     try {
-        const url = `${process.env.NEXT_PUBLIC_API_URL}/${url}`;
-        console.log({url});
-      const response = await fetch(url, {
+        const fullUrl = `${process.env.NEXT_PUBLIC_API_URL}/${url}`;
+        console.log({fullUrl});
+      const response = await fetch(fullUrl, {
         headers: {
           'Accept-Language': locale
         },
