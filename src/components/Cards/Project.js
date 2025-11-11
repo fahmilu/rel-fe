@@ -2,13 +2,47 @@ import Image from "next/image";
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
 import { getLocalizedHref } from "@/utils/navigation";
+import { useState, useEffect } from "react";
 const ProjectCard = ({ data }) => {
     const { i18n } = useTranslation();
     const currentLocale = i18n.language;
+
+    const [imageError, setImageError] = useState(false);
+    const [imageFound, setImageFound] = useState(false);
+
+    useEffect(() => {
+        if (data.image) {
+            // Check if image URL exists
+            const img = new window.Image();
+            img.onload = () => {
+                setImageFound(true);
+                setImageError(false);
+            };
+            img.onerror = () => {
+                setImageError(true);
+                setImageFound(false);
+            };
+            img.src = data.image;
+        }
+    }, [data.image]);
     return (
         <Link href={`${getLocalizedHref('projects', currentLocale)}/${data.slug}`} className="card__project">
             <div className="card__project__image">
-                <Image src={`${process.env.NEXT_PUBLIC_ASSET_URL}/${data.image}`} alt={data.title} fill className="object-cover" />
+                {data.image && !imageError ? (
+                    <Image 
+                        src={`${process.env.NEXT_PUBLIC_ASSET_URL}/${data.image}`} 
+                        alt={data.title}  
+                        fill 
+                        className="object-cover"
+                        onError={() => setImageError(true)}
+                        onLoad={() => setImageError(false)}
+                    />
+                ) : !imageFound ? (
+                    <div className="w-full h-full flex items-center justify-center bg-gray-200 text-gray-500">
+                        Image not found
+                    </div>
+                ) : null}
+                {/* <Image src={`${process.env.NEXT_PUBLIC_ASSET_URL}/${data.image}`} alt={data.title} fill className="object-cover" /> */}
             </div>
             <div className="card__project__content">
                 <div className="card__project__content__top">
